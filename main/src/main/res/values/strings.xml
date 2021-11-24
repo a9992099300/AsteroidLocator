@@ -1,6 +1,21 @@
 <resources>
-    <string name="app_name">MultiModuleNavigationExample</string>
+
+    <string name="app_name">Asteroid locator</string>
+    <!--reserv-->
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--toolbar-->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!--Menu-->
+    <string name="menu">Menu</string>
+    <string name="asteroid_locator">Asteroid locator</string>
+    <string name="photo_asteroid">Photo asteroid</string>
+    <string name="graph_asteroid_locator">Graph Asteroid locator</string>
+    <string name="other">Other</string>
+    <string name="setting">Setting</string>
+    <string name="about_app">About app</string>
 </resources>

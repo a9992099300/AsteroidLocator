@@ -1,13 +1,15 @@
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "AsteroidLocator"
 include ':app'
 include ':main'
 include ':main_navigation'
-include ':home'
+include ':asteroidList'
+include ':ui_core'

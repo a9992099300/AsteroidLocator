@@ -12,7 +12,6 @@ class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,24 +20,18 @@ class StartFragment : Fragment() {
         binding = FragmentStartBinding.inflate(inflater, container,
             false)
         return binding.root
-     //   return inflater.inflate(R.layout.fragment_start, container, false)
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-                binding.button.setOnClickListener {
-                    (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.HomeFlow)
-                }
-        }
-    //    (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.HomeFlow)
-    // decide where to go on the first app launch, check auth tokens if login needed etc...
-//        (0..1).random().let {
-//            //delay(1000)
-//            when (it) {
-//                0 -> (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.HomeFlow)
-//                1 -> (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.DashboardFlow("From start fragment"))
-//            }
-//        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.AsteroidListFlow)
+    }
+
 
 }
+

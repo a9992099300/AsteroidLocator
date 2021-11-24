@@ -11,9 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/asteroidList" />
             <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/main_navigation" />
+            <option value="$PROJECT_DIR$/ui_core" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

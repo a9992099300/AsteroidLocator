@@ -3,14 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20277777777777778" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20277777777777778" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/fragment_asteroid_details.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/fragment_asteroid_list.xml" value="0.36102564102564105" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/menu/bottom_navigation_menu.xml" value="0.20520833333333333" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/drawable/ic_android_black_24dp.xml" value="0.22135416666666666" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/layout/fragment_next.xml" value="0.33" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2074074074074074" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
-        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/drawable/ic_launcher_background.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/activity_content.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/activity_main2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/fragment_container.xml" value="0.20520833333333333" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/fragment_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/menu/activity_main_drawer.xml" value="0.20520833333333333" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/menu/fgd.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main_navigation/src/main/res/drawable/ic_android_black_24dp.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_baseline_nearby_error_24.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_launcher_background.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2074074074074074" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2074074074074074" />
       </map>
     </option>
   </component>

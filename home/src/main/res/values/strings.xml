@@ -1,9 +1,0 @@
-<resources>
-    <string name="home_fragment">Home</string>
-    <string name="next_fragment">Next</string>
-    <string name="to_next_fragment">To next fragment</string>
-    <string name="to_dashboard">Navigate to dashboard flow</string>
-    <string name="to_dashboard_fragment_via_deeplink">To dashboard fragment via deeplink</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-</resources>

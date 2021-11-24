@@ -1,0 +1,11 @@
+<resources>
+    <string name="asteroid_list">Asteroid list</string>
+    <string name="asteroid_detail">Asteroid detail</string>
+    <string name="to_asteroid_detail">To asteroid detail</string>
+
+    <!-- Bottom-->
+    <string name="asteroid_all">All asteroid</string>
+    <string name="asteroid_dangerous">Dangerous asteroid</string>
+    <string name="asteroid_favorites">Favorites asteroid</string>
+
+</resources>
