@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable,
     private lateinit var binding: ActivityMainBinding
 
       private val navigator: Navigator = Navigator()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,14 +29,14 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable,
         navigator.navController = navController
         binding.navView.setupWithNavController(navController)
 
-        init()
+        setView()
     }
 
     override fun navigateToFlow(flow: NavigationFlow) {
         navigator.navigateToFlow(flow)
     }
 
-    private fun init(){
+    private fun setView(){
         val toggle = ActionBarDrawerToggle(this,binding.drawerLayout,
             binding.activityContent.tollbar,R.string.open,R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -64,7 +65,6 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable,
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
-
 
 }
 
