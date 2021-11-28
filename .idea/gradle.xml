@@ -13,6 +13,9 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/asteroidList" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core_api" />
+            <option value="$PROJECT_DIR$/core_impl" />
             <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/main_navigation" />
             <option value="$PROJECT_DIR$/ui_core" />

@@ -23,6 +23,8 @@ object Libs {
     val androidX = AndroidX
     val jetpack = Jetpack
     val test = Test
+    val di = DI
+    val network = Network
 
 
     object UI {
@@ -59,6 +61,25 @@ object Libs {
         const val junit = "junit:junit:$junitVersion"
         const val junitExt = "androidx.test.ext:junit:$junitExtVersion"
         const val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
+    }
+
+    object DI {
+        private const val daggerVersion = "2.40.1"
+
+        const val dagger = "com.google.dagger:dagger:$daggerVersion"
+        const val daggerKapt = "com.google.dagger:dagger-compiler:$daggerVersion"
+    }
+
+    object Network{
+        private const val retrofitVersion = "2.9.0"
+        private const val jsonVersion = "2.8.7"
+        private const val moshiVersion = "1.12.0"
+
+        const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        const val retrofitConvertorJson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+        const val json =  "com.google.code.gson:gson:$jsonVersion"
+        const val moshi ="com.squareup.moshi:moshi-kotlin:$moshiVersion"
+        const val retrofitConvertorMoshi ="com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     }
 
 }

@@ -13,12 +13,11 @@ import com.a9992099300.asteroidlocator.main_navigation.Navigator
 import com.a9992099300.asteroidlocator.main_navigation.ToFlowNavigatable
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(), ToFlowNavigatable,
-    NavigationView.OnNavigationItemSelectedListener {
-
+class MainActivity : AppCompatActivity(), ToFlowNavigatable {
+    //NavigationView.OnNavigationItemSelectedListener
     private lateinit var binding: ActivityMainBinding
 
-      private val navigator: Navigator = Navigator()
+    private val navigator: Navigator = Navigator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +25,13 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable,
         setContentView(binding.root)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        navigator.navController = navController
-        binding.navView.setupWithNavController(navController)
+        navController.apply {
+            navigator.navController = this
+            binding.navView.setupWithNavController(this)
+        }
+
+//        navigator.navController = navController
+//        binding.navView.setupWithNavController(navController)
 
         setView()
     }
@@ -36,35 +40,65 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable,
         navigator.navigateToFlow(flow)
     }
 
-    private fun setView(){
-        val toggle = ActionBarDrawerToggle(this,binding.drawerLayout,
-            binding.activityContent.tollbar,R.string.open,R.string.close)
+    private fun setView() {
+        val toggle = ActionBarDrawerToggle(
+            this, binding.drawerLayout,
+            binding.activityContent.tollbar, R.string.open, R.string.close
+        )
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        binding.navView.setNavigationItemSelectedListener(this)
-    }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.to_asteroid_locator ->{
-                this.navigateToFlow(NavigationFlow.AsteroidListFlow)
+        binding.navView.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.to_asteroid_locator -> {
+                    this.navigateToFlow(NavigationFlow.AsteroidListFlow)
+                    true
+                }
+                R.id.to_photo_asteroid -> {
+                    TODO()
+                }
+                R.id.to_grap_asteroid_locator -> {
+                    TODO()
+                }
+                R.id.setting -> {
+                    TODO()
+                }
+                R.id.about_app -> {
+                    TODO()
+                }
+                else -> false
             }
-            R.id.to_photo_asteroid ->{
+                .also {
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                }
 
-            }
-            R.id.to_grap_asteroid_locator ->{
-
-            }
-            R.id.setting ->{
-
-            }
-            R.id.about_app ->{
-
-            }
         }
-        binding.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
+
+
     }
+
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.to_asteroid_locator ->{
+//                this.navigateToFlow(NavigationFlow.AsteroidListFlow)
+//            }
+//            R.id.to_photo_asteroid ->{
+//
+//            }
+//            R.id.to_grap_asteroid_locator ->{
+//
+//            }
+//            R.id.setting ->{
+//
+//            }
+//            R.id.about_app ->{
+//
+//            }
+//        }
+//        binding.drawerLayout.closeDrawer(GravityCompat.START)
+//        return true
+//    }
 
 }
 
