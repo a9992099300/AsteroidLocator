@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
     private val navigator: Navigator = Navigator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

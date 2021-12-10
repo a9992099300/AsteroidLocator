@@ -1,4 +1,4 @@
-package com.a9992099300.asteroidlocator.home
+package com.a9992099300.asteroidlocator.home.asteroidList
 
 import android.os.Bundle
 import android.view.LayoutInflater

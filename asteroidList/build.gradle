@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 
@@ -57,10 +58,14 @@ dependencies {
     androidTestImplementation(Libs.test.junitExt)
     androidTestImplementation(Libs.test.espresso)
 
+    // DI
+    implementation(Libs.di.dagger)
+    kapt(Libs.di.daggerKapt)
 
     // Feature modules
     implementation project(":main_navigation")
     implementation project(":ui_core")
+    implementation project(':core_api')
 
 
 }

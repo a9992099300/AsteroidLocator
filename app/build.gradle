@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 repositories {
@@ -56,9 +57,21 @@ dependencies {
     androidTestImplementation(Libs.test.junitExt)
     androidTestImplementation(Libs.test.espresso)
 
+    // DI
+    implementation(Libs.di.dagger)
+    kapt(Libs.di.daggerKapt)
+
+    // Network
+    implementation(Libs.network.retrofit)
+    implementation(Libs.network.retrofitConvertorJson)
+    implementation(Libs.network.json)
+    implementation(Libs.network.moshi)
+    implementation(Libs.network.retrofitConvertorMoshi)
+
     // Feature modules
     implementation project(":main")
     implementation project(":main_navigation")
     implementation project(':asteroidList')
     implementation project(":ui_core")
+    implementation project(":core")
 }

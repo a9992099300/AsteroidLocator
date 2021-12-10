@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/asteroidLstFragment"
-        android:name="com.a9992099300.asteroidlocator.home.AsteroidListFragment">
+        android:name="com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragment">
         <action
             android:id="@+id/action_homeFragment_to_nextFragment"
             app:destination="@id/asteroidDetailsFragment" />

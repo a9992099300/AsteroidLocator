@@ -50,7 +50,7 @@ dependencies {
     // Network
     implementation(Libs.network.retrofit)
     implementation(Libs.network.retrofitConvertorJson)
-    implementation(Libs.network.json)
+   // implementation(Libs.network.json)
     implementation(Libs.network.moshi)
     implementation(Libs.network.retrofitConvertorMoshi)
 
