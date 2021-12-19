@@ -1,9 +1,12 @@
 package com.a9992099300.asteroidlocator.core_impl.di
 
+import com.a9992099300.asteroidlocator.core_impl.adapter.AsteroidNetworkSource
 import com.a9992099300.asteroidlocator.core_impl.network.AsteroidInterceptor
+import com.a9992099300.asteroidlocator.core_impl.network.AsteroidNetworkSourceImpl
 import com.a9992099300.asteroidlocator.core_impl.network.AsteroidService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -16,7 +19,11 @@ const val NEO_BASE_API_URL = "https://api.nasa.gov/"
 
 
 @Module
-class NetworkModule {
+abstract class NetworkModule {
+
+
+    companion object{
+
 
     @Provides
     @Singleton
@@ -55,4 +62,9 @@ class NetworkModule {
     fun provideAsteroidApi(retrofit: Retrofit): AsteroidService {
         return retrofit.create(AsteroidService::class.java)
     }
+    }
+    @Binds
+    @Singleton
+    abstract fun AsteroidNetworkSource(asteroidNetworkSourceImpl: AsteroidNetworkSourceImpl): AsteroidNetworkSource
+
 }

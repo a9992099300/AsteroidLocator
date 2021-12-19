@@ -1,11 +1,9 @@
 package com.a9992099300.asteroidlocator.di
 
 import android.app.Application
+import com.a9992099300.asteroidlocator.app.App
 import com.a9992099300.asteroidlocator.core.CoreProviderFactory
-import com.a9992099300.asteroidlocator.core_api.di.ContextProvider
-import com.a9992099300.asteroidlocator.core_api.di.MapperProvider
-import com.a9992099300.asteroidlocator.core_api.di.NetworkProvider
-import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
+import com.a9992099300.asteroidlocator.core_api.di.*
 import dagger.Component
 
 
@@ -13,7 +11,8 @@ import dagger.Component
     dependencies = [
         ContextProvider::class,
         NetworkProvider::class,
-        MapperProvider::class
+        MapperProvider::class,
+        RepositoryProvider::class
     ]
 )
 internal interface FacadeComponent : ProvidersFacade {
@@ -23,11 +22,15 @@ internal interface FacadeComponent : ProvidersFacade {
 
         fun init(application: Application): FacadeComponent {
             val contextProvider = ContextComponent.create(application)
+            val mapperProvider = CoreProviderFactory.createMapperBuilder()
+            val networkProvider = CoreProviderFactory.createNetworkBuilder(contextProvider, mapperProvider)
+
             return facadeComponent ?:
             DaggerFacadeComponent.builder()
                 .contextProvider(contextProvider)
-                .networkProvider(CoreProviderFactory.createNetworkBuilder(contextProvider))
-                .mapperProvider(CoreProviderFactory.createMapperBuilder())
+                .mapperProvider(mapperProvider)
+                .networkProvider(networkProvider)
+                .repositoryProvider(CoreProviderFactory.createRepositoryBuilder(networkProvider))
                 .build()
                 .also { facadeComponent = it }
             }

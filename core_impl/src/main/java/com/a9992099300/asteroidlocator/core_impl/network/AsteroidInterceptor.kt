@@ -1,13 +1,13 @@
 package com.a9992099300.asteroidlocator.core_impl.network
 
-import com.a9992099300.asteroidlocator.core_impl.BuildConfig
+
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
 import javax.inject.Inject
 
-private const val API_KEY = "" //Test Api key
+private const val API_KEY = "pro6YLEqHTodfb3bpEhOdh3LIqN0MsJKJIlMwPdd" //Test Api key
 private const val API_KEY_HEADER = "api_key"
 
 class AsteroidInterceptor @Inject constructor(): Interceptor {

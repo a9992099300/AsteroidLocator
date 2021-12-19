@@ -6,26 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".asteroidList.AsteroidListFragment">
 
-    <TextView
-        android:id="@+id/home_lbl"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/asteroid_list" />
 
-    <Button
-        android:id="@+id/to_next_fragment_btn"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_lbl"
-        android:text="@string/to_asteroid_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleAndroidList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

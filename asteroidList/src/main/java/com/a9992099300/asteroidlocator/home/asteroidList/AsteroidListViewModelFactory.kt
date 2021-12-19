@@ -12,13 +12,12 @@ import javax.inject.Inject
 @Reusable
 class AsteroidListViewModelFactory @Inject constructor(
     private val asteroidRepository: AsteroidRepository,
-    private val resultMapper: ModelMapper<NeoFeed, NeoFeedDto>
 ): ViewModelProvider.Factory{
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ViewModelAsteroidList::class.java)) {
-            return ViewModelAsteroidList(asteroidRepository, resultMapper) as T
+            return ViewModelAsteroidList(asteroidRepository) as T
         } else {
             throw IllegalArgumentException("Cannot instantiate ViewModel: $modelClass")
         }

@@ -13,8 +13,11 @@ internal class NeoFeeDtoNeoFeedDto @Inject constructor(
         override fun mapToInternalLayer(externalLayerModel: NeoFeedDto): NeoFeed {
             return NeoFeed(
                 externalLayerModel.elementCount,
-                //nearEarthObjectMapper.mapToInternalLayer(externalLayerModel.asteroidsByDate.flatMap {  })
-                externalLayerModel.asteroidsByDate.map{nearEarthObjectMapper.mapToInternalLayer(it.value[0])}
+               // nearEarthObjectMapper.mapToInternalLayer(externalLayerModel.asteroidsByDate.value)
+               externalLayerModel.asteroidsByDate.values.flatten().map { nearEarthObjectMapper.mapToInternalLayer(it)},
+               // nearEarthObjectMapper.mapToInternalLayer(externalLayerModel.asteroidsByDate.flatMap {  })
+                //externalLayerModel.asteroidsByDate.map{nearEarthObjectMapper.mapToInternalLayer(it)}
+           // nearEarthObjectMapper.mapToInternalLayer(externalLayerModel.asteroidsByDate.values)
             )
         }
 }

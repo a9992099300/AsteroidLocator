@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.a9992099300.asteroidlocator">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".app.App"
         android:icon="@mipmap/ic_launcher"
         android:fullBackupOnly="true"
         android:label="@string/app_name"

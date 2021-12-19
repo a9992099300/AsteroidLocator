@@ -1,8 +1,9 @@
-package com.a9992099300.asteroidlocator.di
+package com.a9992099300.asteroidlocator.app
 
 import android.app.Application
 import com.a9992099300.asteroidlocator.core_api.di.AppWithFacade
 import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
+import com.a9992099300.asteroidlocator.di.FacadeComponent
 
 class App : Application(), AppWithFacade {
 
@@ -11,7 +12,9 @@ class App : Application(), AppWithFacade {
     }
 
     override fun getFacade(): ProvidersFacade {
-        return FacadeComponent.init(this)
+        return facadeComponent ?: FacadeComponent.init(this).also {
+            facadeComponent = it
+        }
     }
 
     override fun onCreate() {

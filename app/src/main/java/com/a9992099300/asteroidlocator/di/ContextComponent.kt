@@ -23,11 +23,6 @@ internal interface ContextComponent : ContextProvider {
         }
     }
 
-//    @Component.Factory
-//    interface Factory {
-//        fun create(@BindsInstance context: Context): ContextComponent
-//    }
-
     @Component.Builder // переделать на factory
     interface Builder {
 

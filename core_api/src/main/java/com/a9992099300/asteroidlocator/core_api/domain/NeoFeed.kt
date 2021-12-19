@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 data class NeoFeed(
     val elementCount: Int,
-  //  val asteroidsByDate: Map<String, List<NearEarthObject>>
+   // val asteroidsByDate: Map<String, List<NearEarthObject>>
     val asteroidsByDate: List<NearEarthObject>
 )
 
