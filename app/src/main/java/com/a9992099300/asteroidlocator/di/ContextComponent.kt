@@ -23,7 +23,7 @@ internal interface ContextComponent : ContextProvider {
         }
     }
 
-    @Component.Builder // переделать на factory
+    @Component.Builder
     interface Builder {
 
         @BindsInstance

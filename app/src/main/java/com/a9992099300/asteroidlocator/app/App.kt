@@ -3,6 +3,7 @@ package com.a9992099300.asteroidlocator.app
 import android.app.Application
 import com.a9992099300.asteroidlocator.core_api.di.AppWithFacade
 import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
+// import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
 import com.a9992099300.asteroidlocator.di.FacadeComponent
 
 class App : Application(), AppWithFacade {

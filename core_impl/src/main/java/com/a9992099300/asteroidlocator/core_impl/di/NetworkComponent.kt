@@ -1,18 +1,34 @@
 package com.a9992099300.asteroidlocator.core_impl.di
 
 import com.a9992099300.asteroidlocator.core_api.di.ContextProvider
-import com.a9992099300.asteroidlocator.core_api.di.MapperProvider
-import com.a9992099300.asteroidlocator.core_api.di.NetworkProvider
-import com.a9992099300.asteroidlocator.core_impl.adapter.AsteroidNetworkSource
-import com.a9992099300.asteroidlocator.core_impl.network.AsteroidService
+import com.a9992099300.asteroidlocator.core_api.network.AsteroidNetworkSource
+import com.a9992099300.asteroidlocator.core_impl.network.AsteroidApi
 import dagger.Component
-import javax.inject.Singleton
+import javax.inject.Scope
 
-@Singleton
-@Component(dependencies = [ContextProvider::class, MapperProvider::class],
+@NetworkScope
+@Component(dependencies = [ContextProvider::class,
+       DtoMappersComponent::class],
     modules = [NetworkModule::class])
-interface NetworkComponent: NetworkProvider {
+interface NetworkComponent {
 
-    fun provideNetworkApi(): AsteroidService
+    fun provideNetworkApi(): AsteroidApi
     fun provideAsteroidNetworkSource(): AsteroidNetworkSource
+
+    companion object {
+        private var networkComponent: NetworkComponent? = null
+
+        fun create(contextProvider: ContextProvider): NetworkComponent {
+            return networkComponent
+                ?: DaggerNetworkComponent.builder()
+                    .dtoMappersComponent(DtoMappersComponent.create())
+                    .contextProvider(contextProvider)
+                    .build()
+                    .also { networkComponent = it }
+        }
+    }
 }
+
+@Scope
+annotation class NetworkScope
+

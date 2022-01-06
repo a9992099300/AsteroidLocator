@@ -10,6 +10,7 @@ object Versions {
 object GradlePlugins {
     private const val androidBuildToolsVersion = "7.0.3"
 
+
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"
     const val navigationComponentSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Libs.jetpack.navigationComponentVersion}"
@@ -17,7 +18,9 @@ object GradlePlugins {
 
 object Libs {
 
+    private const val coroutinesVersion = "1.4.3"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 
     val ui = UI
     val androidX = AndroidX
@@ -25,7 +28,7 @@ object Libs {
     val test = Test
     val di = DI
     val network = Network
-
+    val database = Database
 
     object UI {
         private const val materialComponentsVersion = "1.5.0-beta01"
@@ -44,11 +47,11 @@ object Libs {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
         const val appCompat = "androidx.appcompat:appcompat:$appCompatVersion"
         const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
+
     }
 
     object Jetpack {
         const val navigationComponentVersion = "2.4.0-alpha02"
-
         const val navigationComponentFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigationComponentVersion"
         const val navigationComponentUiKtx = "androidx.navigation:navigation-ui-ktx:$navigationComponentVersion"
     }
@@ -65,7 +68,6 @@ object Libs {
 
     object DI {
         private const val daggerVersion = "2.40.1"
-
         const val dagger = "com.google.dagger:dagger:$daggerVersion"
         const val daggerKapt = "com.google.dagger:dagger-compiler:$daggerVersion"
     }
@@ -80,6 +82,12 @@ object Libs {
         const val json =  "com.google.code.gson:gson:$jsonVersion"
         const val moshi ="com.squareup.moshi:moshi-kotlin:$moshiVersion"
         const val retrofitConvertorMoshi ="com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    }
+
+    object Database{
+        private const val roomVersion = "2.4.0"
+        const val room = "androidx.room:room-ktx:$roomVersion"
+        const val roomCompiler= "androidx.room:room-compiler:$roomVersion"
     }
 
 }

@@ -2,17 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_all_asteroids"
         android:icon="@drawable/ic_baseline_motion_photos_on_24"
         android:title="@string/asteroid_all" />
     <item
-        android:id="@+id/navigation_process"
+        android:id="@+id/navigation_dangerous_asteroids"
         android:icon="@drawable/ic_baseline_nearby_error_24"
         android:title="@string/asteroid_dangerous" />
 
     <item
-        android:id="@+id/navigation_waiting"
+        android:id="@+id/navigation_favorites_asteroids"
         android:icon="@drawable/ic_baseline_star_24"
         android:title="@string/asteroid_favorites" />
-
 </menu>

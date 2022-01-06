@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- UI state -->
+    <string name="ui_state_connection_error">No connection</string>
+    <string name="ui_state_not_found_error">Not found</string>
+    <string name="ui_state_unknown_error">Unknown error</string>
+
+</resources>

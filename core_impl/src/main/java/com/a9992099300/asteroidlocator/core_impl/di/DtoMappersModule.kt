@@ -2,17 +2,15 @@ package com.a9992099300.asteroidlocator.core_impl.di
 
 import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
 import com.a9992099300.asteroidlocator.core_impl.dto.*
-import com.a9992099300.asteroidlocator.core_impl.mapper.*
-import com.a9992099300.asteroidlocator.core_impl.mapper.NearEarthObjectMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.NeoCloseApproachDataMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.NeoDiameterRangeMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.NeoEstimatedDiameterMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.NeoFeeDtoNeoFeedDto
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NearEarthObjectDtoMapper
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoCloseApproachDataDtoMapper
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoDiameterRangeDtoMapper
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoEstimatedDiameterDtoMapper
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoFeeDtoNeoFeedDto
 import com.a9992099300.asteroidsneo.data.*
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
-import dagger.Reusable
+import javax.inject.Singleton
 
 
 @Module
@@ -25,21 +23,21 @@ internal interface DtoMappersModule {
 
     @Binds
     fun bindNearEarthObjectMapper(
-        mapper: NearEarthObjectMapper
+        dtoMapper: NearEarthObjectDtoMapper
     ): ModelMapper<NearEarthObject, NearEarthObjectDto>
 
     @Binds
     fun bindNearCloseApproachDataMapper(
-        mapper: NeoCloseApproachDataMapper
+        dtoMapper: NeoCloseApproachDataDtoMapper
     ): ModelMapper<NeoCloseApproachData, NeoCloseApproachDataDto>
 
     @Binds
     fun bindNeoEstimatedDiameterMapper(
-        mapper: NeoEstimatedDiameterMapper
+        dtoMapper: NeoEstimatedDiameterDtoMapper
     ): ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterDto>
 
     @Binds
     fun bindNeoDiameterRangeMapper(
-        mapper: NeoDiameterRangeMapper
+        dtoMapper: NeoDiameterRangeDtoMapper
     ): ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>
 }

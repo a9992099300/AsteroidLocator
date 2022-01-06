@@ -1,19 +1,17 @@
 package com.a9992099300.asteroidlocator.core_impl.di
 
-import com.a9992099300.asteroidlocator.core_impl.adapter.AsteroidNetworkSource
+import com.a9992099300.asteroidlocator.core_api.network.AsteroidNetworkSource
 import com.a9992099300.asteroidlocator.core_impl.network.AsteroidInterceptor
 import com.a9992099300.asteroidlocator.core_impl.network.AsteroidNetworkSourceImpl
-import com.a9992099300.asteroidlocator.core_impl.network.AsteroidService
+import com.a9992099300.asteroidlocator.core_impl.network.AsteroidApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import dagger.Reusable
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import javax.inject.Singleton
 
 const val NEO_BASE_API_URL = "https://api.nasa.gov/"
 
@@ -21,12 +19,9 @@ const val NEO_BASE_API_URL = "https://api.nasa.gov/"
 @Module
 abstract class NetworkModule {
 
-
     companion object{
-
-
     @Provides
-    @Singleton
+    @NetworkScope
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
      //   baseUrl: String,
@@ -40,7 +35,7 @@ abstract class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun provideOkHttpClient(asteroidInterceptor: AsteroidInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addNetworkInterceptor(asteroidInterceptor)
@@ -48,7 +43,7 @@ abstract class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun provideMoshi(): MoshiConverterFactory {
         return MoshiConverterFactory.create(
             Moshi.Builder()
@@ -58,13 +53,14 @@ abstract class NetworkModule {
     }
 
     @Provides
-    @Singleton
-    fun provideAsteroidApi(retrofit: Retrofit): AsteroidService {
-        return retrofit.create(AsteroidService::class.java)
+    @NetworkScope
+    fun provideAsteroidApi(retrofit: Retrofit): AsteroidApi {
+        return retrofit.create(AsteroidApi::class.java)
     }
     }
+
     @Binds
-    @Singleton
+    @NetworkScope
     abstract fun AsteroidNetworkSource(asteroidNetworkSourceImpl: AsteroidNetworkSourceImpl): AsteroidNetworkSource
 
 }

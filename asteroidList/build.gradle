@@ -42,7 +42,7 @@ android {
 dependencies {
     // Kotlin
     implementation(Libs.kotlin)
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
+    implementation (Libs.coroutines)
 
     // AndroidX
     implementation(Libs.androidX.appCompat)
