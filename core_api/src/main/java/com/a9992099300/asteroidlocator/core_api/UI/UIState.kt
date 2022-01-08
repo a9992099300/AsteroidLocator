@@ -14,7 +14,9 @@ sealed class UIState<out T> {
 
     //object ShowConnectionError : ShowError(errorMessage = R.string.ui_state_connection_error)
 
-   // object ShowNotFoundError : ShowError(errorMessage = R.string.ui_state_not_found_error)
+    open class ShowEmptyList (
+        @StringRes val emptyMessage: Int = R.string.ui_state_empty_list
+    ) : UIState<Nothing>()
 
     object ShowLoading : UIState<Nothing>()
 }

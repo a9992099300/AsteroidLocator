@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@id/asteroid_list_flow"
-    app:startDestination="@id/asteroidLstFragment">
+    app:startDestination="@id/datePickerFragment">
+
 
     <fragment
-        android:id="@+id/asteroidLstFragment"
-        android:name="com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragment">
+        android:id="@+id/datePickerFragment"
+        android:name="com.a9992099300.asteroidlocator.home.datepick.DatePickerFragment"
+        android:label="DatePickerFragment" >
         <action
-            android:id="@+id/action_homeFragment_to_nextFragment"
+            android:id="@+id/action_datePickerFragment_to_asteroidListFragment2"
+            app:destination="@id/asteroidListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/asteroidListFragment2"
+        android:name="com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragment"
+        android:label="AsteroidListFragment" >
+        <action
+            android:id="@+id/action_asteroidListFragment2_to_asteroidDetailsFragment"
             app:destination="@id/asteroidDetailsFragment" />
-</fragment>
-
+        <argument
+            android:name="date"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/asteroidDetailsFragment"
-        android:name="com.a9992099300.asteroidlocator.home.AsteroidDetailsFragment">
+        android:name="com.a9992099300.asteroidlocator.home.asteroidDetails.AsteroidDetailsFragment"
+        android:label="fragment_asteroid_details"
+        tools:layout="@layout/fragment_asteroid_details" >
+        <argument
+            android:name="asteroid"
+            app:argType="com.a9992099300.asteroidsneo.data.NearEarthObjectUI" />
     </fragment>
 </navigation>

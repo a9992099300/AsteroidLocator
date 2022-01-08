@@ -12,6 +12,7 @@ internal class NeoCloseApproachDataDtoMapper @Inject constructor()
     : ModelMapper<NeoCloseApproachData, NeoCloseApproachDataDto> {
         override fun mapToInternalLayer(externalLayerModel: NeoCloseApproachDataDto): NeoCloseApproachData{
             return NeoCloseApproachData(
+                externalLayerModel.asteroidId,
                 externalLayerModel.approachDate,
                 externalLayerModel.approachEpochDate
             )
@@ -19,6 +20,7 @@ internal class NeoCloseApproachDataDtoMapper @Inject constructor()
 
     override fun mapToExternalLayer(internalLayerModel: NeoCloseApproachData): NeoCloseApproachDataDto {
         return NeoCloseApproachDataDto(
+            internalLayerModel.asteroidId,
             internalLayerModel.approachDate,
             internalLayerModel.approachEpochDate
         )

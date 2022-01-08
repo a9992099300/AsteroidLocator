@@ -1,8 +1,10 @@
 package com.a9992099300.asteroidlocator.home.di
 
 import androidx.lifecycle.ViewModelProvider
-import com.a9992099300.asteroidlocator.core_api.domain.usecases.TypeAsteroidUseCase
-import com.a9992099300.asteroidlocator.home.asteroidList.usecase.TypeAsteroidUseCaseImpl
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.LoadAsteroidsUseCase
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAsteroidsUseCase
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.LoadAsteroidsUseCaseImpl
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAsteroidsUseCaseImpl
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.AsteroidListViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -15,7 +17,12 @@ internal interface AsteroidListModule {
     ): ViewModelProvider.Factory
 
     @Binds
-    fun bindUseCase(
-        typeAsteroidUseCaseImpl: TypeAsteroidUseCaseImpl
-    ) : TypeAsteroidUseCase
+    fun bindLoadCase(
+        loadAsteroidUseCaseImpl: LoadAsteroidsUseCaseImpl
+    ) : LoadAsteroidsUseCase
+
+    @Binds
+    fun bindSaveCase(
+        saveAsteroidUseCaseImpl: SaveDeleteAsteroidsUseCaseImpl
+    ) : SaveDeleteAsteroidsUseCase
 }

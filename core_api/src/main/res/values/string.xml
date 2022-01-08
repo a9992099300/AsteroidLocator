@@ -4,5 +4,6 @@
     <string name="ui_state_connection_error">No connection</string>
     <string name="ui_state_not_found_error">Not found</string>
     <string name="ui_state_unknown_error">Unknown error</string>
+    <string name="ui_state_empty_list">Empty list</string>
 
 </resources>

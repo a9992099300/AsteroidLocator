@@ -18,9 +18,9 @@ interface DtoMappersComponent {
 
     fun provideNeoCloseApproachDataMapper(): ModelMapper<NeoCloseApproachData, NeoCloseApproachDataDto>
 
-    fun provideNeoEstimatedDiameterMapper(): ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterDto>
+   // fun provideNeoEstimatedDiameterMapper(): ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterDto>
 
-    fun provideNeoDiameterRangeMapper(): ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>
+  //  fun provideNeoDiameterRangeMapper(): ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>
 
     companion object {
         private var dtoMappersComponent: DtoMappersComponent? = null

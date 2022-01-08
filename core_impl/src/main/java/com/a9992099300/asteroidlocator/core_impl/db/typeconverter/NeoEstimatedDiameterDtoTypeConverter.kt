@@ -1,7 +1,6 @@
 package com.a9992099300.asteroidlocator.core_impl.db.typeconverter
 
 import androidx.room.TypeConverter
-import com.a9992099300.asteroidlocator.core_impl.dto.NeoCloseApproachDataDto
 import com.a9992099300.asteroidlocator.core_impl.dto.NeoDiameterRangeDto
 import com.a9992099300.asteroidlocator.core_impl.dto.NeoEstimatedDiameterDto
 

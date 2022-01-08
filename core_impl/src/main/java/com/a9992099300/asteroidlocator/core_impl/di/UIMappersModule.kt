@@ -6,9 +6,9 @@ import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
 import com.a9992099300.asteroidlocator.core_impl.dto.*
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.*
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NearEarthObjectUIMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoCloseApproachDataUIMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoDiameterRangeUIMapper
-import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoEstimatedDiameterUIMapper
+//import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoCloseApproachDataUIMapper
+//import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoDiameterRangeUIMapper
+//import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoEstimatedDiameterUIMapper
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoFeedUiMapper
 import com.a9992099300.asteroidsneo.data.*
 import dagger.Binds

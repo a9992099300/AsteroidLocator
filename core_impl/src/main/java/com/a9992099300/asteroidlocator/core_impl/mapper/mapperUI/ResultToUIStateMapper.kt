@@ -30,6 +30,8 @@ internal class ResultToUIStateMapper<R, U>(private val contentMapper: ModelMappe
             }
             is UIState.ShowLoading -> ResultAsteroid.Loading
             is UIState.ShowError -> ResultAsteroid.Error(externalLayerModel.error)
+            is UIState.ShowEmptyList -> ResultAsteroid.Empty
+
         }
     }
 
@@ -43,6 +45,7 @@ internal class ResultToUIStateMapper<R, U>(private val contentMapper: ModelMappe
             }
             is ResultAsteroid.Loading -> UIState.ShowLoading
             is ResultAsteroid.Error -> UIState.ShowError(internalLayerModel.error)
+            is ResultAsteroid.Empty -> UIState.ShowEmptyList()
             else -> UIState.ShowLoading
         }
     }

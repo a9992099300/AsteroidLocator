@@ -1,15 +1,18 @@
 package com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto
 
+import android.util.Log
 import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
 import com.a9992099300.asteroidlocator.core_impl.dto.*
 import com.a9992099300.asteroidsneo.data.*
 import dagger.Reusable
 import javax.inject.Inject
 
+const val TAG = "debug"
+
 @Reusable
 internal class NearEarthObjectDtoMapper @Inject constructor(
     private val neoEstimatedDiameterMapper: ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterDto>,
-    private val neoDiameterRangeMapper: ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>,
+   // private val neoDiameterRangeMapper: ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>,
     private val neoCloseApproachDataMapper: ModelMapper<NeoCloseApproachData, NeoCloseApproachDataDto>,
    // private val NeoMissDistanceMapper: ModelMapper<NeoMissDistance, NeoMissDistanceDto>,
 
@@ -32,7 +35,7 @@ internal class NearEarthObjectDtoMapper @Inject constructor(
             internalLayerModel.id,
             internalLayerModel.name,
             internalLayerModel.nasaJplUrl,
-            // neoDiameterRangeMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter.meters),
+            //neoDiameterRangeMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter.meters),
             neoEstimatedDiameterMapper.mapToExternalLayer(internalLayerModel.estimatedDiameter),
             internalLayerModel.isPotentiallyHazardousAsteroid,
             internalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToExternalLayer(it)},

@@ -18,16 +18,16 @@ data class NeoFeedDto(
 @JsonClass(generateAdapter = true)
 data class NearEarthObjectDto(
     @PrimaryKey
-    @Json(name = "id") val id: String = " ",//+
-    @Json(name = "name") val name: String = " ",//+
-    @Json(name = "nasa_jpl_url") val nasaJplUrl: String  = " ",//?
- //   @Json(name = "absolute_magnitude_h") val absoluteMagnitude: Float? = null,//?
+    @Json(name = "id") val id: String,//+
+    @Json(name = "name") val name: String,//+
+    @Json(name = "nasa_jpl_url") val nasaJplUrl: String,//?
     @Json(name = "estimated_diameter") val estimatedDiameter: NeoEstimatedDiameterDto,//+
-    @Json(name = "is_potentially_hazardous_asteroid") val isPotentiallyHazardousAsteroid: Boolean? = null,//+
-
+    @Json(name = "is_potentially_hazardous_asteroid")
+    val isPotentiallyHazardousAsteroid: Boolean,//+
+ //   @Json(name = "absolute_magnitude_h") val absoluteMagnitude: Float? = null,//?
     @Ignore
-    @Json(name = "close_approach_data") val closeApproachData: List<NeoCloseApproachDataDto>?,//+
-                                        val isFavorite: Boolean = false
+    @Json(name = "close_approach_data") var closeApproachData: List<NeoCloseApproachDataDto>?,//+
+    var isFavorite: Boolean = false
   //  @Json(name = "orbital_data") val orbitalData: NeoOrbitalDataDto? = null,//-
 )   {
     // Constructor for Room.
@@ -36,9 +36,10 @@ data class NearEarthObjectDto(
         name: String,
         nasaJplUrl: String,
         estimatedDiameter: NeoEstimatedDiameterDto,
-        isPotentiallyHazardousAsteroid: Boolean?,
+        isPotentiallyHazardousAsteroid: Boolean,
         isFavorite: Boolean
-    ) : this(id, name, nasaJplUrl, estimatedDiameter, isPotentiallyHazardousAsteroid,null, isFavorite)
+    ) : this(id, name, nasaJplUrl,estimatedDiameter, isPotentiallyHazardousAsteroid,null, isFavorite)
+
 }
 
 
@@ -48,18 +49,10 @@ data class NeoEstimatedDiameterDto(
     @Json(name = "meters") val meters: NeoDiameterRangeDto //+
 )
 
-//@Entity(tableName = "NeoDiameterRangeDto",
-//    foreignKeys = [ForeignKey(
-//    entity = NearEarthObjectDto::class,
-//    parentColumns = ["id"],
-//    childColumns = ["asteroidId"],
-//    onDelete = ForeignKey.CASCADE
-//)],
-//    indices = [Index("asteroidId")]
-//)
+
 @JsonClass(generateAdapter = true)
 data class NeoDiameterRangeDto(
-  //  @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     @Json(name = "estimated_diameter_min") val minimumDiameter: Double? = null,//+
     @Json(name = "estimated_diameter_max") val maximumDiameter: Double? = null,//+
 )
@@ -71,11 +64,24 @@ data class NeoDiameterRangeDto(
 //    ) : this(asteroidId,minimumDiameter,maximumDiameter)
 //}
 
+@Entity(tableName = "NeoCloseApproachData",
+    foreignKeys = [ForeignKey(
+        entity = NearEarthObjectDto::class,
+        parentColumns = ["id"],
+        childColumns = ["asteroidId"],
+        onDelete = ForeignKey.CASCADE,
+        onUpdate = ForeignKey.CASCADE,
+    )],
+    indices = [Index("asteroidId")]
+)
 @JsonClass(generateAdapter = true)
 data class NeoCloseApproachDataDto(
+    @PrimaryKey
+    val asteroidId: String = " ",
     @Json(name = "close_approach_date") val approachDate: String? = null,//+
     @Json(name = "epoch_date_close_approach") val approachEpochDate: Long? = null,//-
-//    @Json(name = "relative_velocity") val relativeVelocity: NeoRelativeVelocityDto? = null,//+
+
+ //   @Json(name = "relative_velocity") val relativeVelocity: NeoRelativeVelocityDto? = null,//+
   //  @Json(name = "miss_distance") val missDistance: NeoMissDistanceDto? = null,//+
 )
 

@@ -9,8 +9,9 @@ object Versions {
 
 object GradlePlugins {
     private const val androidBuildToolsVersion = "7.0.3"
+    private const val navigationSafeargsVersion = "2.3.5"
 
-
+    const val navigationSafeargsPlugins = "androidx.navigation.safeargs"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"
     const val navigationComponentSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${Libs.jetpack.navigationComponentVersion}"
@@ -33,10 +34,13 @@ object Libs {
     object UI {
         private const val materialComponentsVersion = "1.5.0-beta01"
         private const val adapterDelegateVersion = "4.3.0"
+        private const val glideVersion = "4.12.0"
 
         const val materialComponents = "com.google.android.material:material:$materialComponentsVersion"
         const val adapterDelegateKotlinDsl = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVersion"
         const val adapterDelegateKotlinDslLayoutContainer = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-layoutcontainer:$adapterDelegateVersion"
+        const val glide = "com.github.bumptech.glide:glide:$glideVersion"
+        const val glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
     }
 
     object AndroidX {
@@ -51,7 +55,7 @@ object Libs {
     }
 
     object Jetpack {
-        const val navigationComponentVersion = "2.4.0-alpha02"
+        const val navigationComponentVersion = "2.3.5"
         const val navigationComponentFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigationComponentVersion"
         const val navigationComponentUiKtx = "androidx.navigation:navigation-ui-ktx:$navigationComponentVersion"
     }
@@ -71,6 +75,8 @@ object Libs {
         const val dagger = "com.google.dagger:dagger:$daggerVersion"
         const val daggerKapt = "com.google.dagger:dagger-compiler:$daggerVersion"
     }
+
+
 
     object Network{
         private const val retrofitVersion = "2.9.0"

@@ -21,6 +21,9 @@ internal class NeoDiameterRangeDtoMapper @Inject constructor(
         }
 
     override fun mapToExternalLayer(internalLayerModel: NeoDiameterRange): NeoDiameterRangeDto {
-        TODO("Not yet implemented")
+        return NeoDiameterRangeDto(
+            internalLayerModel.minimumDiameter,
+            internalLayerModel.maximumDiameter,
+        )
     }
 }

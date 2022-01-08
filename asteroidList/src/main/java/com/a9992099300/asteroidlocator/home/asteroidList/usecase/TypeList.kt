@@ -1,4 +1,4 @@
-package com.a9992099300.asteroidlocator.core_api.domain.entities
+package com.a9992099300.asteroidlocator.home.asteroidList.usecase
 
 sealed class TypeList{
     object MainList : TypeList()

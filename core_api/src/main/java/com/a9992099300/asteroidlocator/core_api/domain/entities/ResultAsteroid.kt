@@ -10,5 +10,5 @@ sealed class ResultAsteroid<out T> {
 
     object Loading : ResultAsteroid<Nothing>()
 
-   // object Empty : ResultAsteroid<Nothing>()
+    object Empty : ResultAsteroid<Nothing>()
 }

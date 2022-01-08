@@ -47,7 +47,6 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_baseline_star_24" />
 
             <ImageView
@@ -60,8 +59,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/asteroidFavoriteImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_baseline_nearby_error_24"
-                android:clickable="true"
-                android:focusable="true" />
+                />
 
             <TextView
                 android:id="@+id/nameTextView"
