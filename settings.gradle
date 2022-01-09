@@ -10,7 +10,7 @@ rootProject.name = "AsteroidLocator"
 include ':app'
 include ':main'
 include ':main_navigation'
-include ':asteroidList'
+include ':feature_asteroid_list'
 include ':ui_core'
 
 include ':core_api'

@@ -9,12 +9,9 @@ import javax.inject.Inject
 
 const val TAG = "debug"
 
-@Reusable
 internal class NearEarthObjectDtoMapper @Inject constructor(
     private val neoEstimatedDiameterMapper: ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterDto>,
-   // private val neoDiameterRangeMapper: ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>,
     private val neoCloseApproachDataMapper: ModelMapper<NeoCloseApproachData, NeoCloseApproachDataDto>,
-   // private val NeoMissDistanceMapper: ModelMapper<NeoMissDistance, NeoMissDistanceDto>,
 
     ) : ModelMapper<NearEarthObject, NearEarthObjectDto> {
         override fun mapToInternalLayer(externalLayerModel: NearEarthObjectDto): NearEarthObject{
@@ -22,7 +19,6 @@ internal class NearEarthObjectDtoMapper @Inject constructor(
                 externalLayerModel.id,
                 externalLayerModel.name,
                 externalLayerModel.nasaJplUrl,
-               // neoDiameterRangeMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter.meters),
                 neoEstimatedDiameterMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter),
                 externalLayerModel.isPotentiallyHazardousAsteroid,
                 externalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToInternalLayer(it)},
@@ -35,7 +31,6 @@ internal class NearEarthObjectDtoMapper @Inject constructor(
             internalLayerModel.id,
             internalLayerModel.name,
             internalLayerModel.nasaJplUrl,
-            //neoDiameterRangeMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter.meters),
             neoEstimatedDiameterMapper.mapToExternalLayer(internalLayerModel.estimatedDiameter),
             internalLayerModel.isPotentiallyHazardousAsteroid,
             internalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToExternalLayer(it)},

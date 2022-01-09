@@ -3,9 +3,6 @@ package com.a9992099300.asteroidlocator.core_impl.dto
 import androidx.room.*
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import java.util.*
-import javax.inject.Inject
-import kotlin.time.Duration.Companion.seconds
 
 
 @JsonClass(generateAdapter = true)
@@ -42,8 +39,6 @@ data class NearEarthObjectDto(
 
 }
 
-
-
 @JsonClass(generateAdapter = true)
 data class NeoEstimatedDiameterDto(
     @Json(name = "meters") val meters: NeoDiameterRangeDto //+
@@ -56,13 +51,6 @@ data class NeoDiameterRangeDto(
     @Json(name = "estimated_diameter_min") val minimumDiameter: Double? = null,//+
     @Json(name = "estimated_diameter_max") val maximumDiameter: Double? = null,//+
 )
-//{
-//    constructor(
-//        asteroidId: String,
-//        minimumDiameter: String,
-//        maximumDiameter: String,
-//    ) : this(asteroidId,minimumDiameter,maximumDiameter)
-//}
 
 @Entity(tableName = "NeoCloseApproachData",
     foreignKeys = [ForeignKey(

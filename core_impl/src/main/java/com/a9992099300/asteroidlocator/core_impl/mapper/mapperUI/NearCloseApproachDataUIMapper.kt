@@ -7,7 +7,7 @@ import com.a9992099300.asteroidsneo.data.*
 import dagger.Reusable
 import javax.inject.Inject
 
-@Reusable
+
 internal class NeoCloseApproachDataUIMapper @Inject constructor()
     : ModelMapper<NeoCloseApproachData, NeoCloseApproachDataUI> {
         override fun mapToInternalLayer(externalLayerModel: NeoCloseApproachDataUI): NeoCloseApproachData{

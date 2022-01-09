@@ -6,6 +6,5 @@ interface AsteroidNetworkSource {
     suspend fun loadAsteroid(
         startDate: String,
         endDate: String
-    )
-    : NeoFeed
+    ): NeoFeed
 }

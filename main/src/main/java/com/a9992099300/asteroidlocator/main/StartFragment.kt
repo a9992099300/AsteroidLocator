@@ -27,7 +27,7 @@ class StartFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        //имитация долгой загрузки
+        //splash screen
         (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.AsteroidListFlow)
         }
 }

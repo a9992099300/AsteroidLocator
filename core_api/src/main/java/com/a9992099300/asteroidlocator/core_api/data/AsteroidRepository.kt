@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.Flow
 interface AsteroidRepository {
    suspend fun getAsteroids(startDate: String, endDate: String): NeoFeed
    suspend fun getSavedAsteroids(): NeoFeed
-  // suspend fun getSavedDate(): NeoCloseApproachData
    suspend fun saveAsteroid(asteroid: NearEarthObject)
    suspend fun deleteAsteroid(asteroidId: String)
 }

@@ -12,8 +12,6 @@ sealed class UIState<out T> {
         @StringRes val errorMessage: Int = R.string.ui_state_unknown_error
     ) : UIState<Nothing>()
 
-    //object ShowConnectionError : ShowError(errorMessage = R.string.ui_state_connection_error)
-
     open class ShowEmptyList (
         @StringRes val emptyMessage: Int = R.string.ui_state_empty_list
     ) : UIState<Nothing>()

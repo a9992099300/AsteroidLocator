@@ -29,7 +29,6 @@ internal class AsteroidRepositoryImpl @Inject constructor(
     }
 
     override suspend fun saveAsteroid(asteroid: NearEarthObject) {
-      //  Log.d(TAG, "click repo $asteroid")
         asteroidLocalSource.saveAsteroids(asteroid)
     }
 

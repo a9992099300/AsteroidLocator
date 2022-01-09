@@ -7,10 +7,8 @@ import com.a9992099300.asteroidsneo.data.*
 import dagger.Reusable
 import javax.inject.Inject
 
-@Reusable
+
 internal class NeoDiameterRangeUIMapper @Inject constructor(
-    //private val neoDiameterRangeMapper: ModelMapper<NeoDiameterRange, NeoDiameterRangeDto>,
-    //private val NeoMissDistanceMapper: ModelMapper<NeoMissDistance, NeoMissDistanceDto>,
 
     ) : ModelMapper<NeoDiameterRange, NeoDiameterRangeUI> {
         override fun mapToInternalLayer(externalLayerModel: NeoDiameterRangeUI): NeoDiameterRange{

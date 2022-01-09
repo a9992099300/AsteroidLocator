@@ -19,6 +19,17 @@ buildscript {
     }
 }
 
+
+//Scabbard - visualize graph dagger
+plugins {
+    id "scabbard.gradle" version "0.5.0"
+}
+
+scabbard {
+    enabled true
+    outputFormat "svg"
+}
+
 allprojects {
     repositories {
         google()

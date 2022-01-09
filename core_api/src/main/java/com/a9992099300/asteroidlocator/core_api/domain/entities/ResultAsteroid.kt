@@ -6,8 +6,6 @@ sealed class ResultAsteroid<out T> {
 
     open class Error(val error: Throwable? = null) : ResultAsteroid<Nothing>()
 
-  //  object ConnectionError : Error()
-
     object Loading : ResultAsteroid<Nothing>()
 
     object Empty : ResultAsteroid<Nothing>()

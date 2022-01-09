@@ -5,9 +5,11 @@ import com.a9992099300.asteroidlocator.app.App
 import com.a9992099300.asteroidlocator.core.CoreProviderFactory
 //import com.a9992099300.asteroidlocator.core.CoreProviderFactory
 import com.a9992099300.asteroidlocator.core_api.di.*
+import com.a9992099300.asteroidlocator.core_api.di.scope.FacadeScope
 import dagger.Component
+import javax.inject.Scope
 
-
+@FacadeScope
 @Component(
     dependencies = [
         ContextProvider::class,
@@ -36,4 +38,6 @@ internal interface FacadeComponent : ProvidersFacade
         }
     fun inject(app: App)
 }
+
+
 

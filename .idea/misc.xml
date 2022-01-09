@@ -9,8 +9,12 @@
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/fragment_asteroid_details.xml" value="0.39525283797729616" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/fragment_asteroid_list.xml" value="0.36102564102564105" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/fragment_pick_date.xml" value="0.19479166666666667" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/viewstub_empty_layout.xml" value="0.19479166666666667" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/viewstub_error_layout.xml" value="0.19947916666666668" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/layout/viewstub_layout.xml" value="0.340625" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/asteroidList/src/main/res/menu/bottom_navigation_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/asteroid_list_item.xml" value="0.19947916666666668" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/fragment_asteroid_details.xml" value="1.0" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/drawable/ic_android_black_24dp.xml" value="0.22135416666666666" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/home/src/main/res/layout/fragment_next.xml" value="0.33" />

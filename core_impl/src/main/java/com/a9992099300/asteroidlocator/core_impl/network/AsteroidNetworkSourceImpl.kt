@@ -8,7 +8,7 @@ import dagger.Reusable
 import javax.inject.Inject
 
 @Reusable
-class AsteroidNetworkSourceImpl @Inject constructor(
+internal class AsteroidNetworkSourceImpl @Inject constructor(
     private val asteroidApi: AsteroidApi,
     private val asteroidMapper: ModelMapper<NeoFeed, NeoFeedDto>,
 ) : AsteroidNetworkSource {

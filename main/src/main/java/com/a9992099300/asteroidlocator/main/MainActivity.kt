@@ -14,7 +14,7 @@ import com.a9992099300.asteroidlocator.main_navigation.ToFlowNavigatable
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), ToFlowNavigatable {
-    //NavigationView.OnNavigationItemSelectedListener
+
     private lateinit var binding: ActivityMainBinding
 
     private val navigator: Navigator = Navigator()
@@ -30,9 +30,6 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
             navigator.navController = this
             binding.navView.setupWithNavController(this)
         }
-
-//        navigator.navController = navController
-//        binding.navView.setupWithNavController(navController)
 
         setView()
     }

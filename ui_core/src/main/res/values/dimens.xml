@@ -11,4 +11,9 @@
     <dimen name="height_toolbar">56dp</dimen>
     <dimen name="height_navbar">60dp</dimen>
     <dimen name="card_margin">6dp</dimen>
+
+    <dimen name="small_image_size">30dp</dimen>
+    <dimen name="medium_image_size">194dp</dimen>
+    <dimen name="guideline_size">119dp</dimen>
+
 </resources>

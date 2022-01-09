@@ -3,20 +3,9 @@ package com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI
 import com.a9992099300.asteroidlocator.core_api.UI.UIState
 import com.a9992099300.asteroidlocator.core_api.domain.ResultAsteroid
 import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
+import dagger.Reusable
 
-/**
- *  Maps Result<R> into UIState<U>.
- *
- *  Can be used to map e.g. from Result<Word> to UIState<WordUI>
- *  if contentMapper is present as ModelMapper<Word, WordUI>.
- *
- *  If contentMapper is not present, then the mapper assumes that content classes are the same
- *  and just converts Result<R> into UIState<R> and vise versa.
- *
- *  @param R is a core model class
- *  @param U is a UI model class
- *  @property contentMapper maps from a core model into a UI model
- */
+
 internal class ResultToUIStateMapper<R, U>(private val contentMapper: ModelMapper<R, U>? = null) :
     ModelMapper<ResultAsteroid<R>, UIState<U>> {
 

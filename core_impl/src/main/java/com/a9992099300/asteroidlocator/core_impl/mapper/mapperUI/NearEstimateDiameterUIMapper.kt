@@ -6,7 +6,7 @@ import com.a9992099300.asteroidsneo.data.*
 import dagger.Reusable
 import javax.inject.Inject
 
-@Reusable
+
 internal class NeoEstimatedDiameterUIMapper @Inject constructor(
     private val neoDiameterRangeMapper: ModelMapper<NeoDiameterRange, NeoDiameterRangeUI>,
 

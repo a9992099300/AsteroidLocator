@@ -1,0 +1,21 @@
+<resources>
+    <string name="name_id">Name: </string>
+    <string name="diameter">Diameter: </string>
+    <string name="approach_date">Approach date: </string>
+    <string name="details">Details</string>
+
+    <string name="pick_date">Pick date</string>
+    <string name="random_photo_asteroid">Random Photo of Asteroid</string>
+
+    <string name="asteroid_list">Asteroid list</string>
+    <string name="asteroid_detail">Asteroid detail</string>
+    <string name="to_asteroid_detail">To asteroid detail</string>
+
+    <!-- Bottom-->
+    <string name="asteroid_all">All asteroid</string>
+    <string name="asteroid_dangerous">Dangerous asteroid</string>
+    <string name="asteroid_favorites">Favorites asteroid</string>
+    <string name="error">Error</string>
+    <string name="list_empty">List empty</string>
+
+</resources>

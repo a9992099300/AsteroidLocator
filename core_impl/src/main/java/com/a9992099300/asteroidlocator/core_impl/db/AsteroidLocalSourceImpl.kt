@@ -1,6 +1,5 @@
 package com.a9992099300.asteroidlocator.core_impl.db
 
-import android.util.Log
 import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
 import com.a9992099300.asteroidlocator.core_impl.dto.NearEarthObjectDto
 import com.a9992099300.asteroidlocator.core_impl.dto.NeoCloseApproachDataDto
@@ -13,7 +12,7 @@ import javax.inject.Inject
 const val TAG = "debug"
 
 @Reusable
-class AsteroidLocalSourceImpl
+internal class AsteroidLocalSourceImpl
 @Inject constructor
     (
     private val asteroidsDao: AsteroidsDao,
@@ -41,7 +40,6 @@ class AsteroidLocalSourceImpl
 
     override suspend fun saveAsteroids(asteroid: NearEarthObject) {
         val asteroidDto = nearEarthObjectMapper.mapToExternalLayer(asteroid)
-        Log.d(TAG, "click source $asteroid")
         asteroidsDao.saveAsteroid(asteroidDto)
         asteroidsDao.saveData(
             NeoCloseApproachDataDto(

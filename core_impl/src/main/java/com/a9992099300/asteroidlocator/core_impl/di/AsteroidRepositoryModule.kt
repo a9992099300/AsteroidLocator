@@ -19,6 +19,9 @@ internal interface AsteroidRepositoryModule {
     @Binds
     fun bindAsteroidsLocalSource(asteroidsLocalSourceImpl: AsteroidLocalSourceImpl): AsteroidLocalSource
 
+    @Binds
+    fun AsteroidNetworkSource(asteroidNetworkSourceImpl: AsteroidNetworkSourceImpl): AsteroidNetworkSource
+
 }
 
 
