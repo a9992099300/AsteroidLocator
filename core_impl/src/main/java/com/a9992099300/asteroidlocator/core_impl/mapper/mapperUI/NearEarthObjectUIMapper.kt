@@ -26,7 +26,7 @@ internal class NearEarthObjectUIMapper @Inject constructor(
     override fun mapToExternalLayer(internalLayerModel: NearEarthObject): NearEarthObjectUI {
         return NearEarthObjectUI (
             internalLayerModel.id,
-            internalLayerModel.name.filter{ it != '(' && it != ')'},
+            internalLayerModel.name?.filter{ it != '(' && it != ')'},
             internalLayerModel.nasaJplUrl,
             neoEstimatedDiameterMapper.mapToExternalLayer(internalLayerModel.estimatedDiameter),
             internalLayerModel.isPotentiallyHazardousAsteroid,

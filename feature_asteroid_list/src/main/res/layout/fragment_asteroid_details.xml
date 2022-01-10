@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/height_toolbar">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,21 +20,18 @@
         android:checkable="true"
         android:layout_margin="@dimen/cards_padding"
         android:background="#f3ecfe"
-        android:clipToPadding="false"
-        >
+        android:clipToPadding="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:paddingBottom="@dimen/vertical_padding">
 
-            <!--  -->
             <ImageView
                 android:id="@+id/AsteroidImageView"
                 android:layout_width="match_parent"
                 android:layout_height="270dp"
-                android:layout_marginBottom="@dimen/horizontal_margin"
                 android:contentDescription="@string/random_photo_asteroid"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +41,9 @@
 
             <ImageView
                 android:id="@+id/asteroidFavoriteImageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/small_image_size"
+                android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:layout_marginTop="100dp"
                 android:clickable="true"
                 android:contentDescription="@string/random_photo_asteroid"
                 android:focusable="true"
@@ -54,13 +54,14 @@
 
             <ImageView
                 android:id="@+id/asteroidDangerousImageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/small_image_size"
+                android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
                 android:contentDescription="@string/random_photo_asteroid"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/asteroidFavoriteImageView"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AsteroidImageView"
                 app:srcCompat="@drawable/ic_baseline_nearby_error_24" />
 
             <TextView
@@ -68,8 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:layout_marginStart="88dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/horizontal_margin"
                 android:text="@string/name_id"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +85,7 @@
                 android:gravity="left"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/asteroidDangerousImageView"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/AsteroidImageView" />
 
@@ -135,10 +137,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="119dp" />
+                app:layout_constraintGuide_begin="@dimen/guideline_size" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
 
 </FrameLayout>

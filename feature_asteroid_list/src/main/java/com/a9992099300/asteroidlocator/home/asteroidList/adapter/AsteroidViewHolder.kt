@@ -24,25 +24,37 @@ internal class AsteroidViewHolder(
     private val adapter: AsteroidAdapter,
     private val asteroidActionListener: AsteroidAdapter.AsteroidActionListener
 ) : RecyclerView.ViewHolder(binding.root)
-
 {
-    @SuppressLint("SetTextI18n", "UseCompatLoadingForColorStateLists")
+    @SuppressLint("SetTextI18n", "UseCompatLoadingForColorStateLists", "ResourceAsColor")
     fun bind(asteroid: NearEarthObjectUI, position: Int) {
         binding.setNameTextView.text = asteroid.name
         binding.setApproachDateTextView.text =
             "${asteroid.closeApproachData?.first()?.approachDate}"
         binding.setDiameterTextView.text =
-            "${asteroid.estimatedDiameter.meters.maximumDiameter} meters"
+            "${asteroid.estimatedDiameter.meters.maximumDiameter} " +
+                    context.resources.getString(R.string.meters)
 
-        if (asteroid.isPotentiallyHazardousAsteroid) if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (asteroid.isPotentiallyHazardousAsteroid == true)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             binding.asteroidDangerousImageView.imageTintList =
                 context.resources.getColorStateList(R.color.orange, null)
-        }
 
-        if (asteroid.isFavorite) if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            binding.asteroidFavoriteImageView.imageTintList =
-                context.resources.getColorStateList(R.color.yellow,null)
-        }
+
+        if (asteroid.isFavorite)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            binding.asteroidFavoriteImageView.setImageResource(R.drawable.ic_baseline_motion_photos_on_24)
+//                context.resources.getColorStateList(R.color.yellow,null)
+//        else binding.asteroidFavoriteImageView
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            binding.asteroidFavoriteImageView.tooltipText =
+                context.resources.getString(R.string.marker_favorite_asteroid)
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            binding.asteroidDangerousImageView.tooltipText =
+                context.resources.getString(R.string.marker_dangerous_asteroid)
 
         binding.asteroidFavoriteImageView.setOnClickListener {
             asteroid.isFavorite = !asteroid.isFavorite

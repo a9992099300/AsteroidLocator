@@ -3,9 +3,13 @@
     <string name="diameter">Diameter: </string>
     <string name="approach_date">Approach date: </string>
     <string name="details">Details</string>
+    <string name="meters">meters</string>
 
     <string name="pick_date">Pick date</string>
     <string name="random_photo_asteroid">Random Photo of Asteroid</string>
+
+    <string name="marker_favorite_asteroid">Market favorite asteroid</string>
+    <string name="marker_dangerous_asteroid">Market dangerous asteroid</string>
 
     <string name="asteroid_list">Asteroid list</string>
     <string name="asteroid_detail">Asteroid detail</string>

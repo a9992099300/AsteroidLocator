@@ -26,11 +26,11 @@ internal class LoadAsteroidsUseCaseImpl @Inject constructor(
                 val listAsteroids = asteroidRepository.getAsteroids(startDate, endDate)
                 val favoriteAsteroids = asteroidRepository.getSavedAsteroids()
                 val dangerousAsteroids = listAsteroids.asteroidsByDate.filter {
-                    it.isPotentiallyHazardousAsteroid
+                    it.isPotentiallyHazardousAsteroid == true
                 }
 
                 for (i in listAsteroids.asteroidsByDate)
-                    i.isFavorite = favoriteAsteroids.asteroidsByDate.containsId(i.id)
+                    i.isFavorite = i.id?.let { favoriteAsteroids.asteroidsByDate.containsId(it) } == true
 
 
                 when(typeList){

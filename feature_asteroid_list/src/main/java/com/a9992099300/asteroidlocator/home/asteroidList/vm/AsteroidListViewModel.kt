@@ -37,16 +37,11 @@ internal class AsteroidListViewModel (
         }
     }
 
-
     fun saveAsteroid(asteroidUI: NearEarthObjectUI){
         viewModelScope.launch(Dispatchers.IO) {
             val asteroid = nearEarthObjectMapper.mapToInternalLayer(asteroidUI)
             saveDeleteAsteroidsUseCase(asteroid)
-          //  Log.d(TAG, "click vm $asteroid")
         }
-    }
-    init {
-  //      "2021-09-07","2021-09-08", TypeList.MainList
     }
 }
 

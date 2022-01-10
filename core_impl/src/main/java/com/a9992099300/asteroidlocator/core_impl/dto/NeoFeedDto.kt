@@ -16,11 +16,11 @@ data class NeoFeedDto(
 data class NearEarthObjectDto(
     @PrimaryKey
     @Json(name = "id") val id: String,//+
-    @Json(name = "name") val name: String,//+
-    @Json(name = "nasa_jpl_url") val nasaJplUrl: String,//?
+    @Json(name = "name") val name: String?,//+
+    @Json(name = "nasa_jpl_url") val nasaJplUrl: String?,//?
     @Json(name = "estimated_diameter") val estimatedDiameter: NeoEstimatedDiameterDto,//+
     @Json(name = "is_potentially_hazardous_asteroid")
-    val isPotentiallyHazardousAsteroid: Boolean,//+
+    val isPotentiallyHazardousAsteroid: Boolean?,//+
  //   @Json(name = "absolute_magnitude_h") val absoluteMagnitude: Float? = null,//?
     @Ignore
     @Json(name = "close_approach_data") var closeApproachData: List<NeoCloseApproachDataDto>?,//+
@@ -30,10 +30,10 @@ data class NearEarthObjectDto(
     // Constructor for Room.
     constructor(
         id: String,
-        name: String,
-        nasaJplUrl: String,
+        name: String?,
+        nasaJplUrl: String?,
         estimatedDiameter: NeoEstimatedDiameterDto,
-        isPotentiallyHazardousAsteroid: Boolean,
+        isPotentiallyHazardousAsteroid: Boolean?,
         isFavorite: Boolean
     ) : this(id, name, nasaJplUrl,estimatedDiameter, isPotentiallyHazardousAsteroid,null, isFavorite)
 

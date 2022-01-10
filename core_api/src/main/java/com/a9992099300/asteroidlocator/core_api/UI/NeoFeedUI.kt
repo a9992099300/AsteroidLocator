@@ -16,10 +16,10 @@ data class NeoFeedUI(
 @Parcelize
 data class NearEarthObjectUI(
     val id: String,
-    val name: String,
-    val nasaJplUrl: String,
+    val name: String?,
+    val nasaJplUrl: String?,
     val estimatedDiameter: NeoEstimatedDiameterUI,
-    val isPotentiallyHazardousAsteroid: Boolean,
+    val isPotentiallyHazardousAsteroid: Boolean?,
     val closeApproachData: List<NeoCloseApproachDataUI>?,
     var isFavorite: Boolean = false,
 ) : Parcelable

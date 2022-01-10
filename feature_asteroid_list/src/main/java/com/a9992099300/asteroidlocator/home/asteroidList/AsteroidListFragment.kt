@@ -1,9 +1,11 @@
 package com.a9992099300.asteroidlocator.home.asteroidList
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -71,10 +73,21 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         super.onViewCreated(view, savedInstanceState)
 
         val dateArg: AsteroidListFragmentArgs by navArgs()
+
         getDate(dateArg)
         setupRecyclerView()
         setupBottomNavigation()
         setupObservers()
+        setRefreshAction()
+
+    }
+
+    private fun setRefreshAction() {
+        binding.swipeRefresh.setOnRefreshListener {
+            Log.i(TAG, "onRefresh called from SwipeRefreshLayout")
+            updateUI(date, date, typeList)
+            binding.swipeRefresh.isRefreshing = false
+        }
     }
 
     private fun setupBottomNavigation() {

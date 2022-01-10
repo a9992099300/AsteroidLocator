@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -17,6 +28,7 @@
         android:background="#f3ecfe"
         android:clipToPadding="false">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
@@ -26,7 +38,7 @@
             <ImageView
                 android:id="@+id/AsteroidImageView"
                 android:layout_width="match_parent"
-                android:layout_height="194dp"
+                android:layout_height="@dimen/medium_image_size"
                 android:layout_marginBottom="@dimen/horizontal_margin"
                 android:contentDescription="@string/random_photo_asteroid"
                 android:scaleType="centerCrop"
@@ -37,37 +49,35 @@
 
             <ImageView
                 android:id="@+id/asteroidFavoriteImageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/small_image_size"
+                android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:layout_marginTop="100dp"
                 android:clickable="true"
-                android:contentDescription="@string/random_photo_asteroid"
+                android:contentDescription="@string/marker_favorite_asteroid"
                 android:focusable="true"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_baseline_star_24" />
+                app:srcCompat="@drawable/ic_baseline_star_24_yellow" />
 
             <ImageView
                 android:id="@+id/asteroidDangerousImageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/small_image_size"
+                android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:contentDescription="@string/random_photo_asteroid"
+                android:contentDescription="@string/marker_dangerous_asteroid"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/asteroidFavoriteImageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_baseline_nearby_error_24"
-                />
+                app:srcCompat="@drawable/ic_baseline_nearby_error_24"/>
 
             <TextView
                 android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:layout_marginStart="88dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/horizontal_margin"
                 android:text="@string/name_id"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +91,7 @@
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:gravity="left"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/asteroidDangerousImageView"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/AsteroidImageView" />
 
@@ -101,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/horizontal_margin"
                 android:gravity="left"
                 android:textAppearance="?attr/textAppearanceBody2"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -143,10 +153,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="119dp" />
+                app:layout_constraintGuide_begin="@dimen/guideline_size" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
 
 </FrameLayout>

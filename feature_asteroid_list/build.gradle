@@ -52,6 +52,7 @@ dependencies {
     // UI libraries
     implementation(Libs.ui.materialComponents)
     implementation(Libs.ui.glide)
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     annotationProcessor(Libs.ui.glideCompiler)
 
     // Navigation

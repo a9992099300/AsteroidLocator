@@ -10,10 +10,10 @@ data class NeoFeed(
 
 data class NearEarthObject(
     val id: String,
-    val name: String,
-    val nasaJplUrl: String,
+    val name: String?,
+    val nasaJplUrl: String?,
     val estimatedDiameter: NeoEstimatedDiameter,
-    val isPotentiallyHazardousAsteroid: Boolean,
+    val isPotentiallyHazardousAsteroid: Boolean?,
     val closeApproachData: List<NeoCloseApproachData>?,
     var isFavorite: Boolean = false
 )
