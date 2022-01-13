@@ -30,8 +30,7 @@ internal class LoadAsteroidsUseCaseImpl @Inject constructor(
                 }
 
                 for (i in listAsteroids.asteroidsByDate)
-                    i.isFavorite = i.id?.let { favoriteAsteroids.asteroidsByDate.containsId(it) } == true
-
+                    i.isFavorite = i.id.let { favoriteAsteroids.asteroidsByDate.containsId(it) } == true
 
                 when(typeList){
                     TypeList.MainList ->

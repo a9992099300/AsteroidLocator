@@ -42,7 +42,8 @@ internal class AsteroidDetailsFragment : Fragment() {
 
         binding.setNameTextView.text = dateArg.asteroid.name
         binding.setApproachDateTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.approachDate
-        binding.setDiameterTextView.text = dateArg.asteroid.estimatedDiameter.meters.maximumDiameter.toString()
+        binding.setDiameterTextView.text = dateArg.asteroid.maximumDiameter.toString()
+        Log.d(TAG,dateArg.asteroid.toString())
 
         Glide.with(requireContext())
             .load(ImageList.images.random())

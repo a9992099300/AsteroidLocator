@@ -3,6 +3,10 @@ package com.a9992099300.asteroidlocator.core_impl.di
 import com.a9992099300.asteroidlocator.core_api.UI.UIState
 import com.a9992099300.asteroidlocator.core_api.domain.ResultAsteroid
 import com.a9992099300.asteroidlocator.core_api.domain.mapper.ModelMapper
+import com.a9992099300.asteroidlocator.core_impl.dto.NeoMissDistanceDto
+import com.a9992099300.asteroidlocator.core_impl.dto.NeoRelativeVelocityDto
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoMissDistanceDtoMapper
+import com.a9992099300.asteroidlocator.core_impl.mapper.mapperDto.NeoRelativeVelocityDtoMapper
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.*
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NearEarthObjectUIMapper
 import com.a9992099300.asteroidlocator.core_impl.mapper.mapperUI.NeoFeedUiMapper
@@ -36,21 +40,12 @@ internal interface UIMappersModule {
 
     @Binds
     fun bindNearEarthObjectMapper(
-        dtoMapper: NearEarthObjectUIMapper
+        mapper: NearEarthObjectUIMapper
     ): ModelMapper<NearEarthObject, NearEarthObjectUI>
 
     @Binds
     fun bindNearCloseApproachDataMapper(
-        dtoMapper: NeoCloseApproachDataUIMapper
+        mapper: NeoCloseApproachDataUIMapper
     ): ModelMapper<NeoCloseApproachData, NeoCloseApproachDataUI>
 
-    @Binds
-    fun bindNeoEstimatedDiameterMapper(
-        dtoMapper: NeoEstimatedDiameterUIMapper
-    ): ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterUI>
-
-    @Binds
-    fun bindNeoDiameterRangeMapper(
-        dtoMapper: NeoDiameterRangeUIMapper
-    ): ModelMapper<NeoDiameterRange, NeoDiameterRangeUI>
 }

@@ -16,9 +16,8 @@ internal class DatabaseModule {
         @Provides
         @Reusable
         fun provideDatabaseService(context: Context): DatabaseService {
-            return Room.databaseBuilder(context,
-                DatabaseService::class.java,
-                ASTEROID_DATABASE_NAME
+            return Room.inMemoryDatabaseBuilder (context, // Room.inMemoryDatabaseBuilder .databaseBuilder,,ASTEROID_DATABASE_NAME
+                DatabaseService::class.java
             ).build()
         }
 

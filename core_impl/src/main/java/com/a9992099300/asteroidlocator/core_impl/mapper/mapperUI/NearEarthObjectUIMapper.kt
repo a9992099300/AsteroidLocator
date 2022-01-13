@@ -8,7 +8,6 @@ import javax.inject.Inject
 
 
 internal class NearEarthObjectUIMapper @Inject constructor(
-    private val neoEstimatedDiameterMapper: ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterUI>,
     private val neoCloseApproachDataMapper: ModelMapper<NeoCloseApproachData, NeoCloseApproachDataUI>
     ) : ModelMapper<NearEarthObject, NearEarthObjectUI> {
         override fun mapToInternalLayer(externalLayerModel: NearEarthObjectUI): NearEarthObject{
@@ -16,10 +15,12 @@ internal class NearEarthObjectUIMapper @Inject constructor(
                 externalLayerModel.id,
                 externalLayerModel.name,
                 externalLayerModel.nasaJplUrl,
-                neoEstimatedDiameterMapper.mapToInternalLayer(externalLayerModel.estimatedDiameter),
+                externalLayerModel.minimumDiameter?.toDouble(),
+                externalLayerModel.maximumDiameter?.toDouble(),
                 externalLayerModel.isPotentiallyHazardousAsteroid,
                 externalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToInternalLayer(it)},
-                externalLayerModel.isFavorite
+                externalLayerModel.isFavorite,
+                externalLayerModel.description
             )
         }
 
@@ -28,10 +29,12 @@ internal class NearEarthObjectUIMapper @Inject constructor(
             internalLayerModel.id,
             internalLayerModel.name?.filter{ it != '(' && it != ')'},
             internalLayerModel.nasaJplUrl,
-            neoEstimatedDiameterMapper.mapToExternalLayer(internalLayerModel.estimatedDiameter),
+            internalLayerModel.minimumDiameter?.toInt(),
+            internalLayerModel.maximumDiameter?.toInt(),
             internalLayerModel.isPotentiallyHazardousAsteroid,
             internalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToExternalLayer(it)},
-            internalLayerModel.isFavorite
+            internalLayerModel.isFavorite,
+            internalLayerModel.description
         )
     }
 }

@@ -31,7 +31,7 @@ internal class AsteroidViewHolder(
         binding.setApproachDateTextView.text =
             "${asteroid.closeApproachData?.first()?.approachDate}"
         binding.setDiameterTextView.text =
-            "${asteroid.estimatedDiameter.meters.maximumDiameter} " +
+            "${asteroid.maximumDiameter} " +
                     context.resources.getString(R.string.meters)
 
         if (asteroid.isPotentiallyHazardousAsteroid == true)
@@ -42,7 +42,7 @@ internal class AsteroidViewHolder(
 
         if (asteroid.isFavorite)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            binding.asteroidFavoriteImageView.setImageResource(R.drawable.ic_baseline_motion_photos_on_24)
+            binding.asteroidFavoriteImageView.setImageResource(R.drawable.ic_baseline_star_24_yellow)
 //                context.resources.getColorStateList(R.color.yellow,null)
 //        else binding.asteroidFavoriteImageView
 

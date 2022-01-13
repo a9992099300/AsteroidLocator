@@ -20,7 +20,7 @@ internal class NeoFeeDtoNeoFeedDto @Inject constructor(
     override fun mapToExternalLayer(internalLayerModel: NeoFeed): NeoFeedDto {
         return NeoFeedDto(
             internalLayerModel.elementCount,
-            mapOf("" to internalLayerModel.asteroidsByDate.map {  nearEarthObjectMapper.mapToExternalLayer(it)})
+            mapOf(" " to internalLayerModel.asteroidsByDate.map { nearEarthObjectMapper.mapToExternalLayer(it)})
         )
     }
 }

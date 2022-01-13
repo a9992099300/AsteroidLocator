@@ -9,38 +9,29 @@ import javax.inject.Inject
 data class NeoFeedUI(
     val elementCount: Int,
     val asteroidsByDate: List<NearEarthObjectUI>
-) : Parcelable{
-
-}
+) : Parcelable
 
 @Parcelize
 data class NearEarthObjectUI(
     val id: String,
     val name: String?,
     val nasaJplUrl: String?,
-    val estimatedDiameter: NeoEstimatedDiameterUI,
+    val minimumDiameter: Int?,
+    val maximumDiameter: Int?,
     val isPotentiallyHazardousAsteroid: Boolean?,
     val closeApproachData: List<NeoCloseApproachDataUI>?,
     var isFavorite: Boolean = false,
+    val description: String?
 ) : Parcelable
-
-@Parcelize
-data class NeoEstimatedDiameterUI  (
-    val meters: NeoDiameterRangeUI
-) : Parcelable
-
-@Parcelize
-data class NeoDiameterRangeUI(
-    val minimumDiameter: Int? = null,
-    val maximumDiameter: Int? = null,
-) : Parcelable
-
 
 @Parcelize
 data class NeoCloseApproachDataUI(
     val asteroidId: String,
-    val approachDate: String? = null,
-    val approachEpochDate: Long? = null,
+    val approachDate: String?,
+    val approachEpochDate: Long?,
+    val kilometersPerSecond: Double?,
+    val kilometers: Double?,
+    val lunar: Double?,
 ) : Parcelable
 
 

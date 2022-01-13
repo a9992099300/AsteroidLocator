@@ -45,7 +45,9 @@ internal class AsteroidLocalSourceImpl
             NeoCloseApproachDataDto(
                 asteroidDto.id,
                 asteroidDto.closeApproachData?.first()?.approachDate,
-                asteroidDto.closeApproachData?.first()?.approachEpochDate
+                asteroidDto.closeApproachData?.first()?.approachEpochDate,
+                asteroidDto.closeApproachData?.first()?.relativeVelocity,
+                asteroidDto.closeApproachData?.first()?.missDistance
             )
         )
     }

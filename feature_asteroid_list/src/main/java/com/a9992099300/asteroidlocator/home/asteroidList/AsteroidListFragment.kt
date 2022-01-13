@@ -82,13 +82,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
 
     }
 
-    private fun setRefreshAction() {
-        binding.swipeRefresh.setOnRefreshListener {
-            Log.i(TAG, "onRefresh called from SwipeRefreshLayout")
-            updateUI(date, date, typeList)
-            binding.swipeRefresh.isRefreshing = false
-        }
-    }
 
     private fun setupBottomNavigation() {
         typeList = TypeList.MainList
@@ -98,21 +91,17 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
             when(item.itemId){
                 R.id.navigation_all_asteroids-> {
                     typeList = TypeList.MainList
-                    updateUI(date,date,typeList)
-                    true
                 }
                 R.id.navigation_dangerous_asteroids-> {
                     typeList = TypeList.DangerousList
-                    updateUI(date,date,typeList)
-                    true
                 }
                 R.id.navigation_favorites_asteroids-> {
                     typeList = TypeList.FavoriteList
-                    updateUI(date,date,typeList)
-                    true
                 }
                 else -> throw IllegalArgumentException("Not found navigation item")
             }
+            updateUI(date,date,typeList)
+            true
         }
     }
 
@@ -136,6 +125,14 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
                     }
                 }
                 .collect()
+        }
+    }
+
+    private fun setRefreshAction() {
+        binding.swipeRefresh.setOnRefreshListener {
+            Log.i(TAG, "onRefresh called from SwipeRefreshLayout")
+            updateUI(date, date, typeList)
+            binding.swipeRefresh.isRefreshing = false
         }
     }
 

@@ -8,9 +8,8 @@ import dagger.Reusable
 import javax.inject.Inject
 
 
-internal class NeoDiameterRangeDtoMapper @Inject constructor(
-
-    ) : ModelMapper<NeoDiameterRange, NeoDiameterRangeDto> {
+internal class NeoDiameterRangeDtoMapper @Inject constructor()
+    : ModelMapper<NeoDiameterRange, NeoDiameterRangeDto> {
         override fun mapToInternalLayer(externalLayerModel: NeoDiameterRangeDto): NeoDiameterRange{
             return NeoDiameterRange(
                 externalLayerModel.minimumDiameter,

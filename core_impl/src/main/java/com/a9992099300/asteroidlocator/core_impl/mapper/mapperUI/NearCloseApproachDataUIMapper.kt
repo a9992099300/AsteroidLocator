@@ -14,7 +14,10 @@ internal class NeoCloseApproachDataUIMapper @Inject constructor()
             return NeoCloseApproachData(
                 externalLayerModel.asteroidId,
                 externalLayerModel.approachDate,
-                externalLayerModel.approachEpochDate
+                externalLayerModel.approachEpochDate,
+                externalLayerModel.kilometersPerSecond,
+                externalLayerModel.kilometers,
+                externalLayerModel.lunar
             )
         }
 
@@ -22,7 +25,10 @@ internal class NeoCloseApproachDataUIMapper @Inject constructor()
         return NeoCloseApproachDataUI(
             internalLayerModel.asteroidId,
             internalLayerModel.approachDate,
-            internalLayerModel.approachEpochDate
+            internalLayerModel.approachEpochDate,
+            internalLayerModel.kilometersPerSecond,
+            internalLayerModel.kilometers,
+            internalLayerModel.lunar
         )
     }
 }
