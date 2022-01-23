@@ -41,5 +41,6 @@ internal class AsteroidAdapter(
         fun onAsteroidSaveDelete(asteroid: NearEarthObjectUI)
         fun onOpenDetailsFragment(asteroid: NearEarthObjectUI)
     }
+
 }
 

@@ -1,23 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AsteroidLocator" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.AsteroidLocator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/light_gray</item>
+        <item name="colorSecondary">@color/gray</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/shadow_light_gray</item>
+        <item name="colorOnSecondary">@color/shadow_night_gray</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item tools:targetApi="l" name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:endColor">@color/material_dynamic_neutral100</item>
-        <item name="android:startColor">@color/material_dynamic_neutral40</item>
+        <item name="android:endColor">@color/material_dynamic_neutral20</item>
+        <item name="android:startColor">@color/material_dynamic_neutral60</item>
     </style>
 </resources>
-
-

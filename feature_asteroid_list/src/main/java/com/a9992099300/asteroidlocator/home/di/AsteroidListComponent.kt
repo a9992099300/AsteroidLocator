@@ -2,7 +2,7 @@ package com.a9992099300.asteroidlocator.home.di
 
 import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
 import com.a9992099300.asteroidlocator.core_api.di.scope.FragmentScope
-import com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragment
+import com.a9992099300.asteroidlocator.home.asteroidList.view.AsteroidListFragment
 import dagger.Component
 
 @FragmentScope

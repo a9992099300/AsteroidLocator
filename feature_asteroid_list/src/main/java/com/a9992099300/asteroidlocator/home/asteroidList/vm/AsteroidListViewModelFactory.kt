@@ -18,7 +18,7 @@ import javax.inject.Inject
 internal class AsteroidListViewModelFactory
 @Inject constructor (
     private val UIMapper: ModelMapper<ResultAsteroid<NeoFeed>, UIState<NeoFeedUI>>,
-    private val loadAsteroidsUseCaseImpl: LoadAsteroidsUseCase,
+    private val loadAsteroidsUseCase: LoadAsteroidsUseCase,
     private val nearEarthObjectMapper: ModelMapper<NearEarthObject, NearEarthObjectUI>,
     private val saveDeleteAsteroidsUseCase: SaveDeleteAsteroidsUseCase
 )
@@ -29,7 +29,7 @@ internal class AsteroidListViewModelFactory
         if (modelClass.isAssignableFrom(AsteroidListViewModel::class.java)) {
             return AsteroidListViewModel(//asteroidRepository,
                 UIMapper,
-                loadAsteroidsUseCaseImpl,
+                loadAsteroidsUseCase,
                 nearEarthObjectMapper,
                 saveDeleteAsteroidsUseCase
             ) as T

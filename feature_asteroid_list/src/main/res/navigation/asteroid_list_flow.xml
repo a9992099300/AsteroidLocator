@@ -11,19 +11,8 @@
         android:name="com.a9992099300.asteroidlocator.home.datepick.DatePickerFragment"
         android:label="DatePickerFragment" >
         <action
-            android:id="@+id/action_datePickerFragment_to_asteroidListFragment2"
-            app:destination="@id/asteroidListFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/asteroidListFragment2"
-        android:name="com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragment"
-        android:label="AsteroidListFragment" >
-        <action
-            android:id="@+id/action_asteroidListFragment2_to_asteroidDetailsFragment"
-            app:destination="@id/asteroidDetailsFragment" />
-        <argument
-            android:name="date"
-            app:argType="long" />
+            android:id="@+id/action_datePickerFragment_to_asteroidListFragment"
+            app:destination="@id/asteroidListFragment" />
     </fragment>
     <fragment
         android:id="@+id/asteroidDetailsFragment"
@@ -33,5 +22,16 @@
         <argument
             android:name="asteroid"
             app:argType="com.a9992099300.asteroidsneo.data.NearEarthObjectUI" />
+    </fragment>
+    <fragment
+        android:id="@+id/asteroidListFragment"
+        android:name="com.a9992099300.asteroidlocator.home.asteroidList.view.AsteroidListFragment"
+        android:label="AsteroidListFragment" >
+        <action
+            android:id="@+id/action_asteroidListFragment_to_asteroidDetailsFragment"
+            app:destination="@id/asteroidDetailsFragment" />
+        <argument
+            android:name="date"
+            app:argType="long" />
     </fragment>
 </navigation>

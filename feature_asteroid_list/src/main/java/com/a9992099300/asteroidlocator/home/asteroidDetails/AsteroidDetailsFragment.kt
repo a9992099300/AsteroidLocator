@@ -1,5 +1,6 @@
 package com.a9992099300.asteroidlocator.home.asteroidDetails
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.a9992099300.asteroidlocator.home.asteroidList.AsteroidListFragmentArgs
 import com.a9992099300.asteroidlocator.home.databinding.FragmentAsteroidDetailsBinding
 import com.a9992099300.asteroidlocator.ui_core.helper.ImageList
 import com.bumptech.glide.Glide
@@ -19,6 +19,8 @@ const val TAG = "debug"
 internal class AsteroidDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentAsteroidDetailsBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,11 +40,16 @@ internal class AsteroidDetailsFragment : Fragment() {
             return
         }
 
+       // val dateArg = AsteroidDetailsFragmentArgs.fromBundle(bundle)
         val dateArg = AsteroidDetailsFragmentArgs.fromBundle(bundle)
 
         binding.setNameTextView.text = dateArg.asteroid.name
         binding.setApproachDateTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.approachDate
-        binding.setDiameterTextView.text = dateArg.asteroid.maximumDiameter.toString()
+        binding.setDiameterTextView.text = dateArg.asteroid.minimumDiameter.toString()
+        binding.setDiameterMaxTextView.text = dateArg.asteroid.maximumDiameter.toString()
+        binding.setSpeedTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.kilometersPerSecond.toString()
+        binding.setDistanceTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.kilometers.toString()
+        binding.setDescriptionTextView.text = dateArg.asteroid.description.toString()
         Log.d(TAG,dateArg.asteroid.toString())
 
         Glide.with(requireContext())

@@ -42,7 +42,9 @@ internal class AsteroidViewHolder(
 
         if (asteroid.isFavorite)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            binding.asteroidFavoriteImageView.setImageResource(R.drawable.ic_baseline_star_24_yellow)
+            binding.asteroidFavoriteImageView.imageTintList =
+                context.resources.getColorStateList(R.color.purple_500, null)
+         //   setImageResource(R.drawable.ic_baseline_star_24_yellow)
 //                context.resources.getColorStateList(R.color.yellow,null)
 //        else binding.asteroidFavoriteImageView
 

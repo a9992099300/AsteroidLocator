@@ -6,13 +6,21 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/height_toolbar">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/gradient_shadow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:clickable="true"
@@ -45,7 +53,7 @@
                 android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
                 android:clickable="true"
-                android:contentDescription="@string/random_photo_asteroid"
+                android:contentDescription="@string/marker_favorite_asteroid"
                 android:focusable="true"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,11 +65,11 @@
                 android:layout_width="@dimen/small_image_size"
                 android:layout_height="@dimen/small_image_size"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:contentDescription="@string/random_photo_asteroid"
+                android:contentDescription="@string/marker_dangerous_asteroid"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/asteroidFavoriteImageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AsteroidImageView"
+
                 app:srcCompat="@drawable/ic_baseline_nearby_error_24" />
 
             <TextView
@@ -112,15 +120,59 @@
                 app:layout_constraintTop_toBottomOf="@+id/setNameTextView" />
 
             <TextView
-                android:id="@+id/diameterTextView"
+                android:id="@+id/diameterMaxTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/horizontal_margin"
-                android:text="@string/diameter"
+                android:text="@string/diameterMax"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/approachDateTextView" />
+
+            <TextView
+                android:id="@+id/diameterMinTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:text="@string/diameterMin"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diameterMaxTextView" />
+
+            <TextView
+                android:id="@+id/speedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:text="@string/speed"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diameterMinTextView" />
+
+            <TextView
+                android:id="@+id/distanceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:text="@string/distance"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speedTextView" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:text="@string/description"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/distanceTextView" />
 
             <TextView
                 android:id="@+id/setDiameterTextView"
@@ -131,6 +183,47 @@
                 android:textAppearance="?attr/textAppearanceBody2"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/approachDateTextView" />
+
+            <TextView
+                android:id="@+id/setDiameterMaxTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/setDiameterTextView" />
+
+            <TextView
+                android:id="@+id/setSpeedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/setDiameterMaxTextView" />
+
+            <TextView
+                android:id="@+id/setDistanceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/setSpeedTextView" />
+
+            <TextView
+                android:id="@+id/setDescriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintEnd_toStartOf="@+id/asteroidFavoriteImageView"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/setDistanceTextView" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"

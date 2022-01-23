@@ -1,6 +1,10 @@
 <resources>
     <string name="name_id">Name: </string>
-    <string name="diameter">Diameter: </string>
+    <string name="diameterMax">Diameter max.: </string>
+    <string name="diameterMin">Diameter min.: </string>
+    <string name="speed">Speed: </string>
+    <string name="distance">Distance: </string>
+    <string name="description">Description: </string>
     <string name="approach_date">Approach date: </string>
     <string name="details">Details</string>
     <string name="meters">meters</string>
@@ -16,10 +20,12 @@
     <string name="to_asteroid_detail">To asteroid detail</string>
 
     <!-- Bottom-->
-    <string name="asteroid_all">All asteroid</string>
-    <string name="asteroid_dangerous">Dangerous asteroid</string>
-    <string name="asteroid_favorites">Favorites asteroid</string>
+    <string name="asteroid_all">All asteroids</string>
+    <string name="asteroid_dangerous">Dangerous</string>
+    <string name="asteroid_favorites">Favorites</string>
     <string name="error">Error</string>
     <string name="list_empty">List empty</string>
+    <string name="cancel">Cancel</string>
+    <string name="find">Find</string>
 
 </resources>

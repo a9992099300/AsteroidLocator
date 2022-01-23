@@ -6,6 +6,8 @@
     <!-- Default screen padding -->
     <dimen name="horizontal_padding">16dp</dimen>
     <dimen name="vertical_padding">16dp</dimen>
+    <dimen name="width_toolbar">50dp</dimen>
+    <dimen name="start_search">5dp</dimen>
 
     <dimen name="cards_padding">6dp</dimen>
     <dimen name="height_toolbar">56dp</dimen>
@@ -14,6 +16,7 @@
 
     <dimen name="small_image_size">30dp</dimen>
     <dimen name="medium_image_size">194dp</dimen>
-    <dimen name="guideline_size">119dp</dimen>
+    <dimen name="rc_line_start">119dp</dimen>
+    <dimen name="guideline_size">116dp</dimen>
 
 </resources>
