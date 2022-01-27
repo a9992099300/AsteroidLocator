@@ -41,6 +41,7 @@ dependencies {
 
     // AndroidX
     implementation(Libs.androidX.appCompat)
+    implementation("androidx.preference:preference-ktx:1.1.1")
 
     //Testing
     testImplementation(Libs.test.junit)

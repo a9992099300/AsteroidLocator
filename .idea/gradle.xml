@@ -15,9 +15,11 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core_api" />
             <option value="$PROJECT_DIR$/core_impl" />
+            <option value="$PROJECT_DIR$/feature_asteroid_graph" />
             <option value="$PROJECT_DIR$/feature_asteroid_list" />
             <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/main_navigation" />
+            <option value="$PROJECT_DIR$/setting" />
             <option value="$PROJECT_DIR$/ui_core" />
           </set>
         </option>

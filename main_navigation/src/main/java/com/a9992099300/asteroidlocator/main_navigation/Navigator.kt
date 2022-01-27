@@ -8,5 +8,7 @@ class Navigator {
     fun navigateToFlow(navigationFlow: NavigationFlow) = when (navigationFlow) {
          is  NavigationFlow.AsteroidListFlow -> navController.navigate(MainNavGraphDirections.actionAsteroidListFlow())
         is NavigationFlow.PhotoListFlow -> navController.navigate(MainNavGraphDirections.actionPhotoListFlow())
+        is NavigationFlow.SettingFlow-> navController.navigate(MainNavGraphDirections.actionSettingFlow())
+        is NavigationFlow.AsteroidGraphFlow-> navController.navigate(MainNavGraphDirections.actionAsteroidGraphFlow())
     }
 }

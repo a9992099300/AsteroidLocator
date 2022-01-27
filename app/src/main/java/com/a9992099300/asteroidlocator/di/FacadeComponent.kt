@@ -14,7 +14,8 @@ import javax.inject.Scope
     dependencies = [
         ContextProvider::class,
         UIMapperProvider::class,
-        RepositoryProvider::class
+        RepositoryProvider::class,
+        SharedPreferenceProvider::class,
     ]
 )
 internal interface FacadeComponent : ProvidersFacade
@@ -26,12 +27,14 @@ internal interface FacadeComponent : ProvidersFacade
         fun init(application: Application): FacadeComponent {
             val contextProvider = ContextComponent.create(application)
             val uiMapperProvider = CoreProviderFactory.createMapperBuilder()
+            val sharedPreferenceProvider = CoreProviderFactory.createSharedPreferenceBuilder(contextProvider)
 
             return facadeComponent ?:
             DaggerFacadeComponent.builder()
                 .contextProvider(contextProvider)
                 .uIMapperProvider(uiMapperProvider)
                 .repositoryProvider(CoreProviderFactory.createRepositoryBuilder(contextProvider))
+                .sharedPreferenceProvider(sharedPreferenceProvider)
                 .build()
                 .also { facadeComponent = it }
             }

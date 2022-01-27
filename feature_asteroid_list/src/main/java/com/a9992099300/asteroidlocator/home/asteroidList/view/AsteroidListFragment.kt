@@ -43,13 +43,13 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private lateinit var viewModel: AsteroidListViewModel
     private lateinit var binding:  FragmentAsteroidListBinding
     private lateinit var typeList: TypeList
     private var stabViewInflatedError = false
     private var stabViewInflatedEmpty = false
     private var date = " "
-    private val animator = ObjectAnimator()
 
 
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,7 +86,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         typeList = TypeList.MainList
         updateUI(date,date,typeList)
         tabLayoutSetListener()
-        setupBottomNavigation()
         setupObservers()
         setRefreshAction()
 
@@ -115,28 +114,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         })
     }
 
-
-    private fun setupBottomNavigation() {
-       // typeList = TypeList.MainList
-       // updateUI(date,date,typeList)
-
-//        (binding.bottomNavigation as NavigationBarView).setOnItemSelectedListener{ item ->
-//            when(item.itemId){
-//                R.id.navigation_all_asteroids-> {
-//                    typeList = TypeList.MainList
-//                }
-//                R.id.navigation_dangerous_asteroids-> {
-//                    typeList = TypeList.DangerousList
-//                }
-//                R.id.navigation_favorites_asteroids-> {
-//                    typeList = TypeList.FavoriteList
-//                }
-//                else -> throw IllegalArgumentException("Not found navigation item")
-//            }
-//            updateUI(date,date,typeList)
-//            true
-//        }
-    }
 
     private fun setupRecyclerView() {
         binding.recycleAndroidList.apply {
@@ -254,6 +231,4 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         animatorSet.playSequentially(animatorX, animatorScale)
         animatorSet.start()
     }
-
-
 }

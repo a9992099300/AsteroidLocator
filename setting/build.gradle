@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk(Versions.compileSdkVersion)
+    buildToolsVersion = Versions.buildToolsVersion
+
+    defaultConfig {
+        minSdk(Versions.minSdkVersion)
+        targetSdk(Versions.targetSdkVersion)
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Kotlin
+    implementation(Libs.kotlin)
+    implementation (Libs.coroutines)
+
+    // AndroidX
+    implementation(Libs.androidX.appCompat)
+
+    // UI libraries
+    implementation(Libs.ui.materialComponents)
+    implementation(Libs.ui.glide)
+    implementation(Libs.androidX.preferenceKtx)
+    annotationProcessor(Libs.ui.glideCompiler)
+
+    // Navigation
+    implementation(Libs.jetpack.navigationComponentFragmentKtx)
+    implementation(Libs.jetpack.navigationComponentUiKtx)
+
+    //Testing
+    testImplementation(Libs.test.junit)
+    androidTestImplementation(Libs.test.junitExt)
+    androidTestImplementation(Libs.test.espresso)
+
+    // DI
+    implementation(Libs.di.dagger)
+    kapt(Libs.di.daggerKapt)
+
+    // Feature modules
+    implementation project(":main_navigation")
+    implementation project(":ui_core")
+    implementation project(':core_api')
+}

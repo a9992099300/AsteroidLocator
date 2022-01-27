@@ -1,9 +1,7 @@
 package com.a9992099300.asteroidlocator.home.asteroidList.usecase
 
-import com.a9992099300.asteroidlocator.core_api.data.AsteroidRepository
+import com.a9992099300.asteroidlocator.core_api.domain.usecase.AsteroidRepository
 import com.a9992099300.asteroidsneo.data.NearEarthObject
-
-import dagger.Reusable
 
 import javax.inject.Inject
 

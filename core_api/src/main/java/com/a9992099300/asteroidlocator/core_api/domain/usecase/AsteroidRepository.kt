@@ -1,4 +1,4 @@
-package com.a9992099300.asteroidlocator.core_api.data
+package com.a9992099300.asteroidlocator.core_api.domain.usecase
 
 import com.a9992099300.asteroidlocator.core_api.domain.ResultAsteroid
 import com.a9992099300.asteroidsneo.data.NearEarthObject

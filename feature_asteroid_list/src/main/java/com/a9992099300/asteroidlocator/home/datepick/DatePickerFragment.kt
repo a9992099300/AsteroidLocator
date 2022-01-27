@@ -51,27 +51,6 @@ internal class DatePickerFragment : Fragment() {
 
         animateImage()
 
-        binding.switchTheme.setOnCheckedChangeListener { _, isChecked ->
-            when (isChecked) {
-                true -> {
-                   // requireActivity().setTheme(AppCompatDelegate.setDefaultNightMode())
-                    if (currentNightMode == Configuration.UI_MODE_NIGHT_NO){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        recreate(requireActivity())
-                    } else return@setOnCheckedChangeListener
-                }
-                false -> {
-                    if (currentNightMode == Configuration.UI_MODE_NIGHT_YES){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                        recreate(requireActivity())
-                    } else return@setOnCheckedChangeListener
-                    Log.d(TAG, "Light")
-                }
-            }
-
-        }
-
-
         datePicker.addOnPositiveButtonClickListener {
             findNavController()
                 .navigate(
@@ -80,6 +59,7 @@ internal class DatePickerFragment : Fragment() {
                 )
         }
     }
+
 
     private fun animateImage() {
         val asteroidImageView = binding.asteroidImageView
@@ -136,7 +116,6 @@ internal class DatePickerFragment : Fragment() {
             })
         }
     }
-
 
     private fun setDatePicker(): MaterialDatePicker<Long> {
         val datePicker =

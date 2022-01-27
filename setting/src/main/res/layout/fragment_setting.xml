@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="@dimen/height_toolbar"
+        android:background="@drawable/gradient_shadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="@string/sync_title"
+            android:layout_marginLeft="20dp">
+        </TextView>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_theme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/card_margin"
+            android:layout_weight="1"
+            android:text="Switch" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

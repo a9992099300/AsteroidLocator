@@ -27,5 +27,6 @@
     <string name="list_empty">List empty</string>
     <string name="cancel">Cancel</string>
     <string name="find">Find</string>
+    <string name="scan">Scan</string>
 
 </resources>

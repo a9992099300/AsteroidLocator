@@ -17,7 +17,7 @@
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/asteroid_list_item.xml" value="0.4764621968616263" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/fragment_asteroid_details.xml" value="0.48216833095577744" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/fragment_asteroid_list.xml" value="0.1" />
-        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/fragment_pick_date.xml" value="0.1" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/fragment_pick_date.xml" value="0.5" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/view_search.xml" value="0.41383495145631066" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/viewstub_empty_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/feature_asteroid_list/src/main/res/layout/viewstub_error_layout.xml" value="0.2671875" />
@@ -42,6 +42,8 @@
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2074074074074074" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2074074074074074" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/main_navigation/src/main/res/drawable/ic_android_black_24dp.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/setting/src/main/res/layout/fragment_setting.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/setting/src/main/res/xml/root_preferences.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/gradient_shadow.xml" value="0.20729166666666668" />
         <entry key="..\:/Android/Otus/ProjectWork/ProjectMultiModule/ui_core/src/main/res/drawable/ic_baseline_motion_photos_on_24.xml" value="0.26614583333333336" />

@@ -1,6 +1,6 @@
 package com.a9992099300.asteroidlocator.core_impl.di
 
-import com.a9992099300.asteroidlocator.core_api.data.AsteroidRepository
+import com.a9992099300.asteroidlocator.core_api.domain.usecase.AsteroidRepository
 import com.a9992099300.asteroidlocator.core_api.network.AsteroidNetworkSource
 import com.a9992099300.asteroidlocator.core_impl.db.AsteroidLocalSource
 import com.a9992099300.asteroidlocator.core_impl.db.AsteroidLocalSourceImpl

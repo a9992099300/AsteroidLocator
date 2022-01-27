@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/asteroid_graph_flow"
+    app:startDestination="@id/asteroidGraphFragment">
+
+    <fragment
+        android:id="@+id/asteroidGraphFragment"
+        android:name="com.a9992099300.feature_asteroid_graph.AsteroidGraphFragment"
+        android:label="AsteroidGraphFragment" />
+</navigation>
+

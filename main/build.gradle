@@ -44,6 +44,7 @@ dependencies {
     // AndroidX
     implementation(Libs.androidX.appCompat)
     implementation(Libs.androidX.constraintLayout)
+    implementation(Libs.androidX.preferenceKtx)
 
     // UI libraries
     implementation(Libs.ui.materialComponents)
@@ -60,6 +61,11 @@ dependencies {
     // DI
     implementation(Libs.di.dagger)
     kapt(Libs.di.daggerKapt)
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation "androidx.activity:activity-ktx:1.4.0"
+
+
 
 
     // Feature modules

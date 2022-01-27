@@ -71,7 +71,9 @@ dependencies {
     // Feature modules
     implementation project(":main")
     implementation project(":main_navigation")
-    implementation project(':feature_asteroid_list')
+    implementation project(":feature_asteroid_list")
+    implementation project(":feature_asteroid_graph")
+    implementation project(":setting")
     implementation project(":ui_core")
     implementation project(":core")
 }
