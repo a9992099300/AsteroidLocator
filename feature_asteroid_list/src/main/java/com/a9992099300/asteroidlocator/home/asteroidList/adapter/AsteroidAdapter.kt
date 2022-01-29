@@ -10,7 +10,7 @@ import com.a9992099300.asteroidsneo.data.NearEarthObjectUI
 
 internal class AsteroidAdapter(
     private val asteroidActionListener: AsteroidActionListener
-) : ListAdapter<NearEarthObjectUI, AsteroidViewHolder>(diffUtilCallback) {
+) : ListAdapter<NearEarthObjectUI, AsteroidViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AsteroidViewHolder
     {
@@ -20,11 +20,12 @@ internal class AsteroidAdapter(
     }
 
     override fun onBindViewHolder(holder: AsteroidViewHolder, position: Int) {
-        holder.bind(getItem(position), position)
+        holder.binding(getItem(position), position)
     }
 
+
     companion object{
-        val diffUtilCallback = object : DiffUtil.ItemCallback<NearEarthObjectUI>(){
+        val diffUtil = object : DiffUtil.ItemCallback<NearEarthObjectUI>(){
             override fun areItemsTheSame(
                 oldItem: NearEarthObjectUI,
                 newItem: NearEarthObjectUI

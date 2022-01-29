@@ -2,15 +2,12 @@ package com.a9992099300.asteroidlocator.home.asteroidList.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Build
 import android.util.Log
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.a9992099300.asteroidlocator.home.R
-import com.a9992099300.asteroidlocator.home.asteroidDetails.AsteroidDetailsFragmentArgs
 import com.a9992099300.asteroidlocator.home.databinding.AsteroidListItemBinding
-import com.a9992099300.asteroidlocator.home.datepick.DatePickerFragmentDirections
 import com.a9992099300.asteroidlocator.ui_core.helper.ImageList
 import com.a9992099300.asteroidsneo.data.NearEarthObjectUI
 import com.bumptech.glide.Glide
@@ -23,31 +20,48 @@ internal class AsteroidViewHolder(
     private val context: Context,
     private val adapter: AsteroidAdapter,
     private val asteroidActionListener: AsteroidAdapter.AsteroidActionListener
-) : RecyclerView.ViewHolder(binding.root)
-{
-    @SuppressLint("SetTextI18n", "UseCompatLoadingForColorStateLists", "ResourceAsColor")
-    fun bind(asteroid: NearEarthObjectUI, position: Int) {
+) : RecyclerView.ViewHolder(binding.root) {
+    // @SuppressLint("SetTextI18n", "UseCompatLoadingForColorStateLists", "ResourceAsColor")
+    fun binding(asteroid: NearEarthObjectUI, position: Int) {
         binding.setNameTextView.text = asteroid.name
         binding.setApproachDateTextView.text =
             "${asteroid.closeApproachData?.first()?.approachDate}"
         binding.setDiameterTextView.text =
-            "${asteroid.maximumDiameter} " +
-                    context.resources.getString(R.string.meters)
+            "${asteroid.maximumDiameter} " + context.resources.getString(R.string.meters)
 
-        if (asteroid.isPotentiallyHazardousAsteroid == true)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            binding.asteroidDangerousImageView.imageTintList =
-                context.resources.getColorStateList(R.color.orange, null)
+        if (asteroid.isPotentiallyHazardousAsteroid == true) {
+            binding.asteroidDangerousImageView
+                .setImageResource(R.drawable.ic_baseline_nearby_error_orange_24)
+            Log.d(TAG, "isPotentiallyHazardous ${asteroid.name}")
+        } else {
+            binding.asteroidDangerousImageView
+                .setImageResource(R.drawable.ic_baseline_nearby_error_24)
+        }
+
+        if (asteroid.isFavorite) {
+            binding.asteroidFavoriteImageView
+                .setImageResource(R.drawable.ic_baseline_star_purple_24)
+            Log.d(TAG, "isFavorite ${asteroid.name}")
+        } else {
+            binding.asteroidFavoriteImageView
+                .setImageResource(R.drawable.ic_baseline_star_24)
+        }
 
 
-        if (asteroid.isFavorite)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            binding.asteroidFavoriteImageView.imageTintList =
-                context.resources.getColorStateList(R.color.purple_500, null)
-         //   setImageResource(R.drawable.ic_baseline_star_24_yellow)
-//                context.resources.getColorStateList(R.color.yellow,null)
-//        else binding.asteroidFavoriteImageView
-
+//        if (asteroid.isPotentiallyHazardousAsteroid == true) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                binding.asteroidDangerousImageView.imageTintList =
+//                    context.resources.getColorStateList(R.color.orange, null)
+//                Log.d(TAG, "isPotentiallyHazardous ${asteroid.name}")
+//            }
+//        }
+//
+//        if (asteroid.isFavorite) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                binding.asteroidFavoriteImageView.imageTintList =
+//                    context.resources.getColorStateList(R.color.purple_500, null)
+//            }
+//        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
             binding.asteroidFavoriteImageView.tooltipText =

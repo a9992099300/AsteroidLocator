@@ -47,7 +47,6 @@ internal class DatePickerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val datePicker = setDatePicker()
-        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
 
         animateImage()
 
@@ -104,9 +103,9 @@ internal class DatePickerFragment : Fragment() {
                     }
 
                     val animatorSetMove = AnimatorSet()
-                    animatorSetMove.playTogether(animatorX, animatorY)
-                    animatorSetMove.start()
                     animatorSetMove.apply {
+                        this.playTogether(animatorX, animatorY)
+                        this.start()
                         addListener(onEnd = {
                             animatorAlpha.start()
                         })
@@ -125,9 +124,7 @@ internal class DatePickerFragment : Fragment() {
         val manager = this.parentFragmentManager
 
         binding.datePickerButton.setOnClickListener {
-            it.isEnabled = false
             if (!datePicker.isAdded) datePicker.show(manager, TAG)
-            it.isEnabled = true
         }
         return datePicker
     }

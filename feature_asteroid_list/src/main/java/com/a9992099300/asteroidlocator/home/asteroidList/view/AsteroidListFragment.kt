@@ -3,6 +3,7 @@ package com.a9992099300.asteroidlocator.home.asteroidList.view
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -23,7 +25,6 @@ import com.a9992099300.asteroidlocator.home.Ext.gone
 import com.a9992099300.asteroidlocator.home.Ext.visible
 import com.a9992099300.asteroidlocator.home.R
 import com.a9992099300.asteroidlocator.home.asteroidList.usecase.TypeList
-
 import com.a9992099300.asteroidlocator.home.asteroidList.adapter.AsteroidAdapter
 import com.a9992099300.asteroidlocator.home.asteroidList.adapter.TypeDecoration
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.AsteroidListViewModel
@@ -43,26 +44,25 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: AsteroidListViewModel by viewModels { viewModelFactory }
 
-    private lateinit var viewModel: AsteroidListViewModel
     private lateinit var binding:  FragmentAsteroidListBinding
+    private var adapter = AsteroidAdapter (this)
     private lateinit var typeList: TypeList
     private var stabViewInflatedError = false
     private var stabViewInflatedEmpty = false
     private var date = " "
 
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
 
         DaggerAsteroidListComponent
             .builder()
             .providersFacade((activity?.application as AppWithFacade)
-            .getFacade())
+                .getFacade())
             .build()
             .inject(this)
-
-        viewModel = ViewModelProvider(this,viewModelFactory).get(AsteroidListViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -77,7 +77,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         val dateArg: AsteroidListFragmentArgs by navArgs()
         animateLine(binding.gradientLine)
@@ -118,9 +117,10 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
     private fun setupRecyclerView() {
         binding.recycleAndroidList.apply {
             this.layoutManager = LinearLayoutManager(context)
-            this.addItemDecoration(TypeDecoration())
+          //  this.addItemDecoration(TypeDecoration())
             LinearSnapHelper().attachToRecyclerView(this)
         }
+        binding.recycleAndroidList.adapter = adapter
     }
 
     private fun setupObservers() {
@@ -128,7 +128,10 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
             viewModel.asteroidFlow
                 .onEach {
                     when (it) {
-                        is UIState.ShowContent -> showContent(it.content.asteroidsByDate)
+                        is UIState.ShowContent -> {
+                            showContent(it.content.asteroidsByDate)
+                            Log.d(TAG, "${it.content.asteroidsByDate}")
+                        }
                         is UIState.ShowError -> it.error?.message?.let { message ->
                             showErrorMessage(message)}
                         is UIState.ShowLoading -> showProgressBar()
@@ -164,9 +167,10 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         binding.viewStubError.gone()
         binding.viewStubEmpty.gone()
 
-        binding.recycleAndroidList.adapter = AsteroidAdapter(this).apply {
+        adapter.apply {
             submitList(nearEarthObject)
         }
+
         binding.content.visible()
     }
 
@@ -174,7 +178,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         binding.content.gone()
         binding.viewStubError.gone()
         binding.viewStubEmpty.gone()
-
         binding.progressBar.visible()
     }
 

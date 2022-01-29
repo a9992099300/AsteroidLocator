@@ -40,7 +40,6 @@ internal class AsteroidDetailsFragment : Fragment() {
             return
         }
 
-       // val dateArg = AsteroidDetailsFragmentArgs.fromBundle(bundle)
         val dateArg = AsteroidDetailsFragmentArgs.fromBundle(bundle)
 
         binding.setNameTextView.text = dateArg.asteroid.name
@@ -50,7 +49,6 @@ internal class AsteroidDetailsFragment : Fragment() {
         binding.setSpeedTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.kilometersPerSecond.toString()
         binding.setDistanceTextView.text = dateArg.asteroid.closeApproachData?.firstOrNull()?.kilometers.toString()
         binding.setDescriptionTextView.text = dateArg.asteroid.description.toString()
-        Log.d(TAG,dateArg.asteroid.toString())
 
         Glide.with(requireContext())
             .load(ImageList.images.random())

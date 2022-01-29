@@ -1,12 +1,13 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
     compileSdk(Versions.compileSdkVersion)
+    buildToolsVersion = Versions.buildToolsVersion
 
     defaultConfig {
         minSdk(Versions.minSdkVersion)
@@ -24,10 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -40,14 +43,16 @@ android {
 dependencies {
     // Kotlin
     implementation(Libs.kotlin)
+    implementation (Libs.coroutines)
 
     // AndroidX
     implementation(Libs.androidX.appCompat)
-    implementation(Libs.androidX.constraintLayout)
-    implementation(Libs.androidX.preferenceKtx)
 
     // UI libraries
     implementation(Libs.ui.materialComponents)
+    implementation(Libs.ui.glide)
+    implementation(Libs.androidX.preferenceKtx)
+    annotationProcessor(Libs.ui.glideCompiler)
 
     // Navigation
     implementation(Libs.jetpack.navigationComponentFragmentKtx)
@@ -62,15 +67,6 @@ dependencies {
     implementation(Libs.di.dagger)
     kapt(Libs.di.daggerKapt)
 
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
-    implementation "androidx.activity:activity-ktx:1.4.0"
-
-
-
-
     // Feature modules
-    implementation project(":main_navigation")
-    implementation project(":ui_core")
-    implementation project(":core_api")
-    implementation project(":domain_preference")
+    implementation project(':core_api')
 }

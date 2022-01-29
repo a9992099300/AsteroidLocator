@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:text="@string/sync_title"
             android:layout_marginLeft="20dp">
         </TextView>
@@ -27,10 +27,8 @@
             android:id="@+id/switch_theme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/card_margin"
-            android:layout_weight="1"
-            android:text="Switch" />
-
+            android:layout_marginRight="20dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
 

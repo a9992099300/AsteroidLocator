@@ -71,4 +71,5 @@ dependencies {
     implementation project(":main_navigation")
     implementation project(":ui_core")
     implementation project(':core_api')
+    implementation project(':domain_preference')
 }

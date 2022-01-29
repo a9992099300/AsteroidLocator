@@ -12,6 +12,7 @@ const val TAG = "debug"
 internal class AsteroidPreferencesImpl @Inject constructor(context: Context) : AsteroidPreferences {
     private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
+     //   .setOnPreferenceChangeListener
     override suspend fun loadAppPreference(): AppPreference {
         val prefTheme = sharedPreferences.getBoolean(PREFERENCES_THEME, false)
         Log.d(TAG, "preference PreferencesImpl $prefTheme")
@@ -20,12 +21,19 @@ internal class AsteroidPreferencesImpl @Inject constructor(context: Context) : A
         return AppPreference(prefTheme, prefLanguage)
     }
 
-    override suspend fun saveAppPreference(preference: AppPreference) {
+    override suspend fun saveTheme(blackTheme: Boolean) {
         sharedPreferences.edit {
-            putBoolean(PREFERENCES_THEME, preference.theme)
-            putString(PREFERENCES_LANGUAGE, preference.language.name)
+            putBoolean(PREFERENCES_THEME, blackTheme)
+            Log.d(TAG, "blackTheme impl $blackTheme")
         }
     }
+
+    override suspend fun saveLanguage(language: Language) {
+        sharedPreferences.edit {
+            putString(PREFERENCES_LANGUAGE, language.name)
+        }
+    }
+
     companion object {
         private const val PREFERENCES_LANGUAGE = "language"
         private const val PREFERENCES_THEME = "theme"

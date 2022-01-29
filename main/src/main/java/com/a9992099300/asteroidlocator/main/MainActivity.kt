@@ -5,12 +5,14 @@ import android.content.res.Configuration
 import android.os.Bundle
 import androidx.preference.PreferenceManager
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -34,8 +36,8 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: MainActivityViewModel by viewModels { viewModelFactory }
 
-    private lateinit var viewModel: MainActivityViewModel
     private lateinit var binding: ActivityMainBinding
     private val navigator: Navigator = Navigator()
 
@@ -50,12 +52,12 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
             .builder()
             .providersFacade(
                 (application as AppWithFacade)
-                    .getFacade())
+                    .getFacade()
+            )
             .build()
             .inject(this)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(MainActivityViewModel::class.java)
-
+        viewModel.loadThemePreference()
         setNavController()
         setTheme()
         setView()
@@ -75,6 +77,7 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
         lifecycleScope.launchWhenStarted {
             viewModel.preferred
                 .onEach {
+                    Log.d(TAG, "main theme ${it.theme}, $currentNightMode")
                     if (it.theme) {
                         if (currentNightMode == Configuration.UI_MODE_NIGHT_NO) {
                             AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
@@ -87,7 +90,7 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
                         }
                     }
                 }
-                .collect()
+            .collect()
         }
     }
 
@@ -108,9 +111,6 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
                 R.id.to_asteroid_locator -> {
                     this.navigateToFlow(NavigationFlow.AsteroidListFlow)
                     true
-                }
-                R.id.to_photo_asteroid -> {
-                    TODO()
                 }
                 R.id.to_grap_asteroid_locator -> {
                     this.navigateToFlow(NavigationFlow.AsteroidGraphFlow)
