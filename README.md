@@ -10,8 +10,9 @@
 3. Загрузка популярных фотографий с сервиса NASA. (В разработке)
 
 # Скриншоты:
+![screen1](https://user-images.githubusercontent.com/52620726/150689343-438d2120-5a15-4e68-bd58-37bda94c6a90.PNG)
+![screen2](https://user-images.githubusercontent.com/52620726/150689412-d6e9e45c-32aa-42ee-9318-0edb080e7622.PNG)
 
-![Screen 1](https://user-images.githubusercontent.com/52620726/148685939-ed938d99-869c-49c0-a4c6-3bd735ec7984.PNG)
 
 # График зависимостей модулей:
 
@@ -22,7 +23,8 @@
 
 * Kotlin + Coroutines +Flow
 * Clean Architecture + MVVM
-* MultiModule Project
+* 
+
 * Navigation Component
 * Dagger 2
 * Retrofit
