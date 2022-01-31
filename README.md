@@ -5,27 +5,24 @@
 
 # Возможности приложения:
 
-1. Поиск астероидов по дате и загрузка их в локальное хранилище. (Реализовано)
+1. Поиск астероидов по дате и загрузка избранных в локальное хранилище. (Реализовано)
 2. Построение графика астероидов. (В разработке)
-3. Загрузка популярных фотографий с сервиса NASA. (В разработке)
 
 # Скриншоты:
 ![screen1](https://user-images.githubusercontent.com/52620726/150689343-438d2120-5a15-4e68-bd58-37bda94c6a90.PNG)
 ![screen2](https://user-images.githubusercontent.com/52620726/150689412-d6e9e45c-32aa-42ee-9318-0edb080e7622.PNG)
 
-
 # График зависимостей модулей:
 
-![График зависимостей модулей](https://user-images.githubusercontent.com/52620726/148686022-af31189c-79f0-48fa-912f-97aa8db9f0ea.PNG)
+![График зависимостей модулей](https://user-images.githubusercontent.com/52620726/151851070-1ce2c548-4f67-4392-a5bb-b066f8eb2344.PNG)
 
-
-# Использованные технологии:
+# Используемые технологии:
 
 * Kotlin + Coroutines +Flow
 * Clean Architecture + MVVM
-* 
-
+* Multimodule
 * Navigation Component
 * Dagger 2
-* Retrofit
-* Room
+* Retrofit, Room, SharedPreferences
+* Animation, CustomView
+* Testing...
