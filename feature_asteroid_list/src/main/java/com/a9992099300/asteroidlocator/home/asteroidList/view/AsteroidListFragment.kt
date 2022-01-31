@@ -21,24 +21,24 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import com.a9992099300.asteroidlocator.core_api.UI.UIState
 import com.a9992099300.asteroidlocator.core_api.di.AppWithFacade
-import com.a9992099300.asteroidlocator.home.Ext.gone
-import com.a9992099300.asteroidlocator.home.Ext.visible
+import com.a9992099300.asteroidlocator.ui_core.Ext.gone
+import com.a9992099300.asteroidlocator.ui_core.Ext.visible
 import com.a9992099300.asteroidlocator.home.R
-import com.a9992099300.asteroidlocator.home.asteroidList.usecase.TypeList
 import com.a9992099300.asteroidlocator.home.asteroidList.adapter.AsteroidAdapter
-import com.a9992099300.asteroidlocator.home.asteroidList.adapter.TypeDecoration
+import com.a9992099300.asteroidlocator.home.asteroidList.adapter.TAG
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.TypeList
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.AsteroidListViewModel
 import com.a9992099300.asteroidlocator.home.databinding.FragmentAsteroidListBinding
 import com.a9992099300.asteroidlocator.home.di.DaggerAsteroidListComponent
 import com.a9992099300.asteroidsneo.data.NearEarthObjectUI
 import com.google.android.material.tabs.TabLayout
+import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
-const val TAG = "debug"
 
 internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidActionListener{
 
@@ -104,11 +104,11 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                // Handle tab reselect
+                //
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                // Handle tab unselect
+                //
             }
         })
     }
@@ -117,7 +117,6 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
     private fun setupRecyclerView() {
         binding.recycleAndroidList.apply {
             this.layoutManager = LinearLayoutManager(context)
-          //  this.addItemDecoration(TypeDecoration())
             LinearSnapHelper().attachToRecyclerView(this)
         }
         binding.recycleAndroidList.adapter = adapter
@@ -157,6 +156,7 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         val format = SimpleDateFormat("yyyy-MM-dd")
         date = format.format(Date(dateArg.date))
     }
+
 
     private fun updateUI(startDate: String, endDate: String, typeList: TypeList)  {
         viewModel.loadAsteroids(startDate,endDate,typeList)

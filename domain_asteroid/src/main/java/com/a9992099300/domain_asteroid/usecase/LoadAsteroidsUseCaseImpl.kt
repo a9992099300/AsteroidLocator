@@ -2,7 +2,7 @@ package com.a9992099300.asteroidlocator.home.asteroidList.usecase
 
 import com.a9992099300.asteroidlocator.core_api.domain.usecase.AsteroidRepository
 import com.a9992099300.asteroidlocator.core_api.domain.ResultAsteroid
-import com.a9992099300.asteroidlocator.home.Ext.containsId
+import com.a9992099300.asteroidlocator.ui_core.Ext.containsId
 import com.a9992099300.asteroidsneo.data.NeoFeed
 import dagger.Reusable
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 @Reusable
-internal class LoadAsteroidsUseCaseImpl @Inject constructor(
+class LoadAsteroidsUseCaseImpl @Inject constructor(
     private val asteroidRepository: AsteroidRepository,
 ): LoadAsteroidsUseCase {
 
@@ -45,6 +45,7 @@ internal class LoadAsteroidsUseCaseImpl @Inject constructor(
                         if (favoriteAsteroids.asteroidsByDate.isNotEmpty())
                         emit(ResultAsteroid.Success(favoriteAsteroids))
                         else emit(ResultAsteroid.Empty)
+                    else -> emit(ResultAsteroid.Empty)
                 }
             } catch (throwable: Exception) {
                 emit(ResultAsteroid.Error(throwable))

@@ -5,6 +5,8 @@ import com.a9992099300.asteroidsneo.data.NeoFeed
 import kotlinx.coroutines.flow.Flow
 
 
-internal interface LoadAsteroidsUseCase {
-    operator fun invoke (startDate: String, endDate: String, typeList: TypeList): Flow<ResultAsteroid<NeoFeed>>
+interface LoadAsteroidsUseCase {
+    operator fun invoke (startDate: String,
+                         endDate: String,
+                         typeList: TypeList): Flow<ResultAsteroid<NeoFeed>>
 }

@@ -8,7 +8,7 @@ import javax.inject.Inject
 const val TAG = "debug"
 
 
-internal class SaveDeleteAsteroidsUseCaseImpl @Inject constructor(
+class SaveDeleteAsteroidsUseCaseImpl @Inject constructor(
     private val asteroidRepository: AsteroidRepository,
 ): SaveDeleteAsteroidsUseCase {
     override suspend fun invoke(asteroid: NearEarthObject) {

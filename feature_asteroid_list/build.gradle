@@ -48,12 +48,13 @@ dependencies {
 
     // AndroidX
     implementation(Libs.androidX.appCompat)
-    implementation "androidx.preference:preference-ktx:1.1.1"
+    implementation (Libs.androidX.preferenceKtx)
+    implementation (Libs.androidX.swipeRefreshLayout)
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     // UI libraries
     implementation(Libs.ui.materialComponents)
     implementation(Libs.ui.glide)
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     annotationProcessor(Libs.ui.glideCompiler)
 
     // Navigation
@@ -73,5 +74,6 @@ dependencies {
     implementation project(":main_navigation")
     implementation project(":ui_core")
     implementation project(':core_api')
+    implementation project(':domain_asteroid')
 
 }

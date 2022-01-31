@@ -16,6 +16,7 @@ import javax.inject.Scope
         UIMapperProvider::class,
         RepositoryProvider::class,
         SharedPreferenceProvider::class,
+        NavigationProvider::class
     ]
 )
 internal interface FacadeComponent : ProvidersFacade
@@ -35,6 +36,7 @@ internal interface FacadeComponent : ProvidersFacade
                 .uIMapperProvider(uiMapperProvider)
                 .repositoryProvider(CoreProviderFactory.createRepositoryBuilder(contextProvider))
                 .sharedPreferenceProvider(sharedPreferenceProvider)
+                .navigationProvider(CoreProviderFactory.createNavigation(contextProvider))
                 .build()
                 .also { facadeComponent = it }
             }

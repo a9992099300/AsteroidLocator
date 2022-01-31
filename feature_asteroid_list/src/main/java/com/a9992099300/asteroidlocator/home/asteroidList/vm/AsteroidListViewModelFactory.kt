@@ -11,7 +11,6 @@ import com.a9992099300.asteroidsneo.data.NearEarthObject
 import com.a9992099300.asteroidsneo.data.NearEarthObjectUI
 import com.a9992099300.asteroidsneo.data.NeoFeed
 import com.a9992099300.asteroidsneo.data.NeoFeedUI
-import dagger.Reusable
 import javax.inject.Inject
 
 

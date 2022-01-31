@@ -14,12 +14,12 @@ data class NeoFeedUI(
 @Parcelize
 data class NearEarthObjectUI(
     val id: String,
-    val name: String?,
-    val nasaJplUrl: String?,
-    val minimumDiameter: Int?,
-    val maximumDiameter: Int?,
-    val isPotentiallyHazardousAsteroid: Boolean?,
-    val closeApproachData: List<NeoCloseApproachDataUI>?,
+    val name: String,
+    val nasaJplUrl: String,
+    val minimumDiameter: Int,
+    val maximumDiameter: Int,
+    val isPotentiallyHazardousAsteroid: Boolean,
+    val closeApproachData: List<NeoCloseApproachDataUI>,
     var isFavorite: Boolean = false,
     val description: String?
 ) : Parcelable
@@ -27,11 +27,11 @@ data class NearEarthObjectUI(
 @Parcelize
 data class NeoCloseApproachDataUI(
     val asteroidId: String,
-    val approachDate: String?,
-    val approachEpochDate: Long?,
-    val kilometersPerSecond: Double?,
-    val kilometers: Double?,
-    val lunar: Double?,
+    val approachDate: String,
+    val approachEpochDate: Long,
+    val kilometersPerSecond: Double,
+    val kilometers: Double,
+    val lunar: Double,
 ) : Parcelable
 
 

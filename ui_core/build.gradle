@@ -47,4 +47,7 @@ dependencies {
     androidTestImplementation(Libs.test.junitExt)
     androidTestImplementation(Libs.test.espresso)
 
+    // Feature modules
+    implementation project(':core_api')
+
 }

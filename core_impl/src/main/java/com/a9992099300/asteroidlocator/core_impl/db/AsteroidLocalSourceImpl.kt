@@ -9,7 +9,6 @@ import com.a9992099300.asteroidsneo.data.NeoFeed
 import dagger.Reusable
 import javax.inject.Inject
 
-const val TAG = "debug"
 
 @Reusable
 internal class AsteroidLocalSourceImpl
@@ -44,10 +43,10 @@ internal class AsteroidLocalSourceImpl
         asteroidsDao.saveData(
             NeoCloseApproachDataDto(
                 asteroidDto.id,
-                asteroidDto.closeApproachData?.first()?.approachDate,
-                asteroidDto.closeApproachData?.first()?.approachEpochDate,
-                asteroidDto.closeApproachData?.first()?.relativeVelocity,
-                asteroidDto.closeApproachData?.first()?.missDistance
+                asteroidDto.closeApproachData!!.first().approachDate,
+                asteroidDto.closeApproachData!!.first().approachEpochDate,
+                asteroidDto.closeApproachData!!.first().relativeVelocity,
+                asteroidDto.closeApproachData!!.first().missDistance
             )
         )
     }

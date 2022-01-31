@@ -8,12 +8,12 @@ data class NeoFeed(
 
 data class NearEarthObject(
     val id: String,
-    val name: String?,
-    val nasaJplUrl: String?,
-    val minimumDiameter: Double?,
-    val maximumDiameter: Double?,
-    val isPotentiallyHazardousAsteroid: Boolean?,
-    val closeApproachData: List<NeoCloseApproachData>?,
+    val name: String,
+    val nasaJplUrl: String,
+    val minimumDiameter: Double,
+    val maximumDiameter: Double,
+    val isPotentiallyHazardousAsteroid: Boolean,
+    val closeApproachData: List<NeoCloseApproachData>,
     var isFavorite: Boolean,
     val description: String?
 )
@@ -23,30 +23,30 @@ data class NeoEstimatedDiameter  (
 )
 
 data class NeoDiameterRange(
-    val minimumDiameter: Double?,
-    val maximumDiameter: Double?,
+    val minimumDiameter: Double,
+    val maximumDiameter: Double,
 )
 
 data class NeoCloseApproachData(
     val asteroidId: String,
-    val approachDate: String?,
-    val approachEpochDate: Long?,
-    val kilometersPerSecond: Double?,
-    val kilometers: Double?,
-    val lunar: Double?,
+    val approachDate: String,
+    val approachEpochDate: Long,
+    val kilometersPerSecond: Double,
+    val kilometers: Double,
+    val lunar: Double,
 )
 
 data class NeoRelativeVelocity(
-    val kilometersPerSecond: Double?,
+    val kilometersPerSecond: Double,
 )
 
 data class NeoMissDistance(
-     val kilometers: Double?,
-     val lunar: Double?,
+     val kilometers: Double,
+     val lunar: Double,
 )
 
 data class NeoOrbitalData(
-    val orbitClass: NeoOrbitClass?
+    val orbitClass: NeoOrbitClass
 )
 
 data class NeoOrbitClass(

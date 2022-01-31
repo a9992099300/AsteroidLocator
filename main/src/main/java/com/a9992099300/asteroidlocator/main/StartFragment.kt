@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.a9992099300.asteroidlocator.main.databinding.FragmentStartBinding
 import com.a9992099300.asteroidlocator.main_navigation.NavigationFlow
-import com.a9992099300.asteroidlocator.main_navigation.ToFlowNavigatable
-import kotlinx.coroutines.*
+import com.a9992099300.asteroidlocator.main_navigation.FlowNavigatable
 
 class StartFragment : Fragment() {
 
@@ -28,6 +27,6 @@ class StartFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         //splash screen
-        (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.AsteroidListFlow)
+        (requireActivity() as FlowNavigatable).navigateToFlow(NavigationFlow.AsteroidListFlow)
         }
 }

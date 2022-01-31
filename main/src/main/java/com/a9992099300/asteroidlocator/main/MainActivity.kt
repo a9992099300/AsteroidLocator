@@ -16,31 +16,34 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.a9992099300.asteroidlocator.core_api.UI.UIState
 import com.a9992099300.asteroidlocator.core_api.di.AppWithFacade
+import com.a9992099300.asteroidlocator.core_api.di.NavigationProvider
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.MainActivityViewModel
 import com.a9992099300.asteroidlocator.main.databinding.ActivityMainBinding
 import com.a9992099300.asteroidlocator.main.di.DaggerMainComponent
-import com.a9992099300.asteroidlocator.main_navigation.NavigationFlow
-import com.a9992099300.asteroidlocator.main_navigation.Navigator
-import com.a9992099300.asteroidlocator.main_navigation.ToFlowNavigatable
+import com.a9992099300.asteroidlocator.main_navigation.*
+import com.a9992099300.asteroidlocator.main_navigation.di.DaggerNavigatorComponent
+import com.a9992099300.asteroidlocator.main_navigation.di.NavigatorComponent
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 const val TAG = "debug"
 
-class MainActivity : AppCompatActivity(), ToFlowNavigatable {
+class MainActivity : AppCompatActivity(), FlowNavigatable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: MainActivityViewModel by viewModels { viewModelFactory }
 
-    private lateinit var binding: ActivityMainBinding
-    private val navigator: Navigator = Navigator()
+    @Inject
+    lateinit var navigator: NavigatorImpl
 
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -48,12 +51,14 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val facade = (application as AppWithFacade).getFacade()
+
         DaggerMainComponent
             .builder()
             .providersFacade(
-                (application as AppWithFacade)
-                    .getFacade()
+                facade
             )
+            .navigatorComponent(DaggerNavigatorComponent.builder().providersFacade(facade).build())
             .build()
             .inject(this)
 
@@ -121,7 +126,8 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
                     true
                 }
                 R.id.about_app -> {
-                    TODO()
+                    this.navigateToFlow(NavigationFlow.SettingFlow)
+                    true
                 }
                 else -> false
             }

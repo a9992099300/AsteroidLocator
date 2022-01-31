@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 
@@ -49,12 +50,19 @@ dependencies {
     implementation(Libs.jetpack.navigationComponentFragmentKtx)
     implementation(Libs.jetpack.navigationComponentUiKtx)
 
+    // DI
+    implementation(Libs.di.dagger)
+    kapt(Libs.di.daggerKapt)
+
     //Testing
     testImplementation(Libs.test.junit)
     androidTestImplementation(Libs.test.junitExt)
     androidTestImplementation(Libs.test.espresso)
 
+    // F
+//    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+//    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
     // Feature modules
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation project(':core_api')
 }

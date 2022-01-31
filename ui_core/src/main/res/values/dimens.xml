@@ -19,4 +19,6 @@
     <dimen name="rc_line_start">119dp</dimen>
     <dimen name="guideline_size">116dp</dimen>
 
+    <dimen name="custom_view_graph">350dp</dimen>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.a9992099300.asteroidlocator.home.Ext
+package com.a9992099300.asteroidlocator.ui_core.Ext
 
 import android.content.res.Resources
 import android.util.TypedValue

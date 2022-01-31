@@ -6,3 +6,7 @@ sealed class NavigationFlow {
     object SettingFlow  : NavigationFlow()
     object AsteroidGraphFlow : NavigationFlow()
 }
+
+interface FlowNavigatable {
+    fun navigateToFlow(flow: NavigationFlow)
+}

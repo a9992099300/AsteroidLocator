@@ -2,8 +2,8 @@ package com.a9992099300.asteroidlocator.home.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.a9992099300.asteroidlocator.home.asteroidList.usecase.LoadAsteroidsUseCase
-import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAsteroidsUseCase
 import com.a9992099300.asteroidlocator.home.asteroidList.usecase.LoadAsteroidsUseCaseImpl
+import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAsteroidsUseCase
 import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAsteroidsUseCaseImpl
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.AsteroidListViewModelFactory
 import dagger.Binds

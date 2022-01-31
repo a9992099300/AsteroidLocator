@@ -28,5 +28,6 @@
     <string name="cancel">Cancel</string>
     <string name="find">Find</string>
     <string name="scan">Scan</string>
+    <string name="asteroid_locator">Asteroid Locator</string>
 
 </resources>

@@ -1,19 +1,13 @@
 package com.a9992099300.asteroidlocator.home.asteroidList.view
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Context
-import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.OvershootInterpolator
-import android.widget.SearchView
-import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContentProviderCompat.requireContext
-import com.a9992099300.asteroidlocator.home.Ext.invisible
-import com.a9992099300.asteroidlocator.home.Ext.visible
+import com.a9992099300.asteroidlocator.ui_core.Ext.invisible
+import com.a9992099300.asteroidlocator.ui_core.Ext.visible
 import com.a9992099300.asteroidlocator.home.R
 import com.a9992099300.asteroidlocator.home.databinding.ViewSearchBinding
 import java.util.concurrent.Flow

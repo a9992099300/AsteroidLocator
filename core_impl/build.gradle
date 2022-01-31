@@ -59,6 +59,10 @@ dependencies {
     implementation(Libs.database.room)
     kapt(Libs.database.roomCompiler)
 
+    // Navigation
+    implementation(Libs.jetpack.navigationComponentFragmentKtx)
+    implementation(Libs.jetpack.navigationComponentUiKtx)
+
     // core modules
     api project(":core_api")
 }

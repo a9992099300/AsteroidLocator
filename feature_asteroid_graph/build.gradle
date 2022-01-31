@@ -4,7 +4,6 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
-
 }
 
 
@@ -48,13 +47,13 @@ dependencies {
 
     // AndroidX
     implementation(Libs.androidX.appCompat)
-    implementation "androidx.preference:preference-ktx:1.1.1"
 
     // UI libraries
     implementation(Libs.ui.materialComponents)
     implementation(Libs.ui.glide)
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     annotationProcessor(Libs.ui.glideCompiler)
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 
     // Navigation
     implementation(Libs.jetpack.navigationComponentFragmentKtx)
@@ -73,5 +72,6 @@ dependencies {
     implementation project(":main_navigation")
     implementation project(":ui_core")
     implementation project(':core_api')
+    implementation project(':domain_asteroid')
 
 }

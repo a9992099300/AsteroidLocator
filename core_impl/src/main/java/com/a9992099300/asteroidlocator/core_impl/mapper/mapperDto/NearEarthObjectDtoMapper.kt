@@ -20,7 +20,8 @@ internal class NearEarthObjectDtoMapper @Inject constructor(
                 externalLayerModel.estimatedDiameter.meters.maximumDiameter,
                 externalLayerModel.estimatedDiameter.meters.minimumDiameter,
                 externalLayerModel.isPotentiallyHazardousAsteroid,
-                externalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToInternalLayer(it)},
+                externalLayerModel.closeApproachData.let {
+                    it!!.map{neoCloseApproachDataMapper.mapToInternalLayer(it)} },
                 externalLayerModel.isFavorite,
                 externalLayerModel.orbitalData?.orbitClass?.description
             )
@@ -36,7 +37,7 @@ internal class NearEarthObjectDtoMapper @Inject constructor(
                         minimumDiameter = internalLayerModel.minimumDiameter,
                         maximumDiameter = internalLayerModel.maximumDiameter))),
             internalLayerModel.isPotentiallyHazardousAsteroid,
-            internalLayerModel.closeApproachData?.map{neoCloseApproachDataMapper.mapToExternalLayer(it)},
+            internalLayerModel.closeApproachData.map{neoCloseApproachDataMapper.mapToExternalLayer(it)},
             internalLayerModel.isFavorite,
             neoOrbitalDataMapper.mapToExternalLayer(
                 NeoOrbitalData(NeoOrbitClass(internalLayerModel.description))

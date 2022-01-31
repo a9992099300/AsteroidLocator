@@ -8,14 +8,12 @@ import com.a9992099300.asteroidlocator.core_api.domain.entities.AppPreference
 import com.a9992099300.asteroidlocator.core_api.domain.usecase.AsteroidPreferences
 import com.a9992099300.asteroidlocator.core_api.domain.entities.Language
 import javax.inject.Inject
-const val TAG = "debug"
+
 internal class AsteroidPreferencesImpl @Inject constructor(context: Context) : AsteroidPreferences {
     private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
-     //   .setOnPreferenceChangeListener
     override suspend fun loadAppPreference(): AppPreference {
         val prefTheme = sharedPreferences.getBoolean(PREFERENCES_THEME, false)
-        Log.d(TAG, "preference PreferencesImpl $prefTheme")
         val prefLanguage = sharedPreferences.getString(PREFERENCES_LANGUAGE, null)
             ?.let { Language.valueOf(it) }  ?: Language.DEFAULT
         return AppPreference(prefTheme, prefLanguage)
@@ -24,7 +22,6 @@ internal class AsteroidPreferencesImpl @Inject constructor(context: Context) : A
     override suspend fun saveTheme(blackTheme: Boolean) {
         sharedPreferences.edit {
             putBoolean(PREFERENCES_THEME, blackTheme)
-            Log.d(TAG, "blackTheme impl $blackTheme")
         }
     }
 

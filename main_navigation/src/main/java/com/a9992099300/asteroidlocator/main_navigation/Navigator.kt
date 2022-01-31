@@ -1,14 +1,5 @@
 package com.a9992099300.asteroidlocator.main_navigation
 
-import androidx.navigation.NavController
-
-class Navigator {
-    lateinit var navController: NavController
-
-    fun navigateToFlow(navigationFlow: NavigationFlow) = when (navigationFlow) {
-         is  NavigationFlow.AsteroidListFlow -> navController.navigate(MainNavGraphDirections.actionAsteroidListFlow())
-        is NavigationFlow.PhotoListFlow -> navController.navigate(MainNavGraphDirections.actionPhotoListFlow())
-        is NavigationFlow.SettingFlow-> navController.navigate(MainNavGraphDirections.actionSettingFlow())
-        is NavigationFlow.AsteroidGraphFlow-> navController.navigate(MainNavGraphDirections.actionAsteroidGraphFlow())
-    }
+interface Navigator {
+    fun navigateToFlow(navigationFlow: NavigationFlow)
 }

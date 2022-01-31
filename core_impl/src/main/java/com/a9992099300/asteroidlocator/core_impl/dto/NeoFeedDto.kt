@@ -16,12 +16,11 @@ data class NeoFeedDto(
 data class NearEarthObjectDto(
     @PrimaryKey
     @Json(name = "id") val id: String = " ",
-    @Json(name = "name") val name: String?,
-    @Json(name = "nasa_jpl_url") val nasaJplUrl: String?,
+    @Json(name = "name") val name: String,
+    @Json(name = "nasa_jpl_url") val nasaJplUrl: String,
     @Json(name = "estimated_diameter") val estimatedDiameter: NeoEstimatedDiameterDto,
     @Json(name = "is_potentially_hazardous_asteroid")
-    val isPotentiallyHazardousAsteroid: Boolean?,//+
- //   @Json(name = "absolute_magnitude_h") val absoluteMagnitude: Float? = null,
+    val isPotentiallyHazardousAsteroid: Boolean,//+
     @Ignore
     @Json(name = "close_approach_data") var closeApproachData: List<NeoCloseApproachDataDto>?,
     var isFavorite: Boolean = false,
@@ -29,13 +28,12 @@ data class NearEarthObjectDto(
     @Json(name = "orbital_data") val orbitalData: NeoOrbitalDataDto? = null
 )   {
     // Constructor for Room.
-    //Embedded -вставить сложное поле (prefix)
     constructor(
         id: String,
-        name: String?,
-        nasaJplUrl: String?,
+        name: String,
+        nasaJplUrl: String,
         estimatedDiameter: NeoEstimatedDiameterDto,
-        isPotentiallyHazardousAsteroid: Boolean?,
+        isPotentiallyHazardousAsteroid: Boolean,
         isFavorite: Boolean,
         orbitalData: NeoOrbitalDataDto?
     ) : this(id, name, nasaJplUrl,estimatedDiameter, isPotentiallyHazardousAsteroid,
@@ -51,8 +49,8 @@ data class NeoEstimatedDiameterDto(
 @JsonClass(generateAdapter = true)
 data class NeoDiameterRangeDto(
     @PrimaryKey(autoGenerate = true)
-    @Json(name = "estimated_diameter_min") val minimumDiameter: Double?,
-    @Json(name = "estimated_diameter_max") val maximumDiameter: Double?,
+    @Json(name = "estimated_diameter_min") val minimumDiameter: Double,
+    @Json(name = "estimated_diameter_max") val maximumDiameter: Double,
 )
 
 @Entity(tableName = "NeoCloseApproachData",
@@ -69,29 +67,29 @@ data class NeoDiameterRangeDto(
 data class NeoCloseApproachDataDto(
     @PrimaryKey
     val asteroidId: String = " ",
-    @Json(name = "close_approach_date") val approachDate: String?,
-    @Json(name = "epoch_date_close_approach") val approachEpochDate: Long?,
+    @Json(name = "close_approach_date") val approachDate: String,
+    @Json(name = "epoch_date_close_approach") val approachEpochDate: Long,
     @Embedded
-    @Json(name = "relative_velocity") val relativeVelocity: NeoRelativeVelocityDto?,
+    @Json(name = "relative_velocity") val relativeVelocity: NeoRelativeVelocityDto,
     @Embedded
-    @Json(name = "miss_distance") val missDistance: NeoMissDistanceDto?,
+    @Json(name = "miss_distance") val missDistance: NeoMissDistanceDto,
 )
 
 @JsonClass(generateAdapter = true)
 data class NeoRelativeVelocityDto(
-    @Json(name = "kilometers_per_second") val kilometersPerSecond: Double?
+    @Json(name = "kilometers_per_second") val kilometersPerSecond: Double
 )
 
 @JsonClass(generateAdapter = true)
 data class NeoMissDistanceDto(
-    @Json(name = "kilometers") val kilometers: Double?,
-    @Json(name = "lunar") val lunar: Double?
+    @Json(name = "kilometers") val kilometers: Double,
+    @Json(name = "lunar") val lunar: Double
 )
 
 @JsonClass(generateAdapter = true)
 data class NeoOrbitalDataDto(
     @Embedded
-    @Json(name = "orbit_class") val orbitClass: NeoOrbitClassDto?
+    @Json(name = "orbit_class") val orbitClass: NeoOrbitClassDto
 )
 
 @JsonClass(generateAdapter = true)

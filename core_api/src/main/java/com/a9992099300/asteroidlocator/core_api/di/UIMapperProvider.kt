@@ -13,10 +13,6 @@ interface UIMapperProvider {
 
     fun provideNeoCloseApproachDataMapper(): ModelMapper<NeoCloseApproachData, NeoCloseApproachDataUI>
 
- //   fun provideNeoEstimatedDiameterMapper(): ModelMapper<NeoEstimatedDiameter, NeoEstimatedDiameterUI>
-
- //   fun provideNeoDiameterRangeMapper(): ModelMapper<NeoDiameterRange, NeoDiameterRangeUI>
-
     fun provideNeoFeedUIResultMapper(): ModelMapper<ResultAsteroid<NeoFeed>, UIState<NeoFeedUI>>
 
 }

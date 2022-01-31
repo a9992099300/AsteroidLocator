@@ -13,7 +13,6 @@
     <!--Menu-->
     <string name="menu">Menu</string>
     <string name="asteroid_locator">Asteroid locator</string>
-    <string name="photo_asteroid">Photo asteroid</string>
     <string name="graph_asteroid_locator">Graph Asteroid locator</string>
     <string name="other">Other</string>
     <string name="setting">Setting</string>

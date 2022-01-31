@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsteroidGraphFragment">
+    tools:context=".AsteroidGraphFragment"
+    android:layout_marginTop="@dimen/height_toolbar" >
+<!--    android:background="?attr/colorSecondaryVariant"-->
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="4dp"
+        android:background="@drawable/gradient_shadow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+    <com.a9992099300.feature_asteroid_graph.CustomViewAsteroidGraph
+        android:id="@+id/customViewAsteroidGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/earth"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/earthpng"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="5dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/first_asteroid"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/asteroid"
+        app:layout_constraintCircle="@+id/earth"
+        android:rotation="90"
+        app:layout_constraintCircleAngle="145"
+        app:layout_constraintCircleRadius="200dp"
+        tools:ignore="MissingConstraints"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

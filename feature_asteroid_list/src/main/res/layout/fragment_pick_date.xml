@@ -51,7 +51,7 @@
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="10"
-        android:text="Asteroid Locator"
+        android:text="@string/asteroid_locator"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@id/asteroidImageView"
         app:layout_constraintEnd_toEndOf="parent"

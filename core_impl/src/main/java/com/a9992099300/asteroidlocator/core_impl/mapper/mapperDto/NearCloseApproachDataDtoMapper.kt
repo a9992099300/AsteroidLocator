@@ -18,9 +18,9 @@ internal class NeoCloseApproachDataDtoMapper @Inject constructor(
                 externalLayerModel.asteroidId,
                 externalLayerModel.approachDate,
                 externalLayerModel.approachEpochDate,
-                externalLayerModel.relativeVelocity?.kilometersPerSecond,
-                externalLayerModel.missDistance?.kilometers,
-                externalLayerModel.missDistance?.lunar
+                externalLayerModel.relativeVelocity.kilometersPerSecond,
+                externalLayerModel.missDistance.kilometers,
+                externalLayerModel.missDistance.lunar
             )
         }
 

@@ -11,6 +11,7 @@
     <color name="yellow">#FFEB3B</color>
     <color name="gray">#9A9C9C</color>
     <color name="shadow_night_gray">#6F7070</color>
+    <color name="shadow_night_black_gray">#424242</color>
     <color name="light_gray">#D3D5D5</color>
     <color name="shadow_light_gray">#E9EAEA</color>
 </resources>

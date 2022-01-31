@@ -8,9 +8,6 @@
             <item android:title="@string/asteroid_locator"
                 android:id="@+id/to_asteroid_locator"
                 />
-            <item android:title="@string/photo_asteroid"
-                android:id="@+id/to_photo_asteroid"
-                />
             <item android:title="@string/graph_asteroid_locator"
                 android:id="@+id/to_grap_asteroid_locator"
                 />

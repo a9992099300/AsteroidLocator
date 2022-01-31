@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core_api" />
             <option value="$PROJECT_DIR$/core_impl" />
+            <option value="$PROJECT_DIR$/domain_asteroid" />
             <option value="$PROJECT_DIR$/domain_preference" />
             <option value="$PROJECT_DIR$/feature_asteroid_graph" />
             <option value="$PROJECT_DIR$/feature_asteroid_list" />

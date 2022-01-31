@@ -8,7 +8,6 @@ import com.a9992099300.asteroidsneo.data.NeoFeed
 import dagger.Reusable
 import javax.inject.Inject
 
-const val TAG = "debug"
 
 @Reusable
 internal class AsteroidRepositoryImpl @Inject constructor(

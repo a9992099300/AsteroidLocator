@@ -21,11 +21,11 @@ internal class AsteroidViewHolder(
     private val adapter: AsteroidAdapter,
     private val asteroidActionListener: AsteroidAdapter.AsteroidActionListener
 ) : RecyclerView.ViewHolder(binding.root) {
-    // @SuppressLint("SetTextI18n", "UseCompatLoadingForColorStateLists", "ResourceAsColor")
+
     fun binding(asteroid: NearEarthObjectUI, position: Int) {
         binding.setNameTextView.text = asteroid.name
         binding.setApproachDateTextView.text =
-            "${asteroid.closeApproachData?.first()?.approachDate}"
+            "${asteroid.closeApproachData.first().approachDate}"
         binding.setDiameterTextView.text =
             "${asteroid.maximumDiameter} " + context.resources.getString(R.string.meters)
 
@@ -46,22 +46,6 @@ internal class AsteroidViewHolder(
             binding.asteroidFavoriteImageView
                 .setImageResource(R.drawable.ic_baseline_star_24)
         }
-
-
-//        if (asteroid.isPotentiallyHazardousAsteroid == true) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                binding.asteroidDangerousImageView.imageTintList =
-//                    context.resources.getColorStateList(R.color.orange, null)
-//                Log.d(TAG, "isPotentiallyHazardous ${asteroid.name}")
-//            }
-//        }
-//
-//        if (asteroid.isFavorite) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                binding.asteroidFavoriteImageView.imageTintList =
-//                    context.resources.getColorStateList(R.color.purple_500, null)
-//            }
-//        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
             binding.asteroidFavoriteImageView.tooltipText =

@@ -1,10 +1,7 @@
 package com.a9992099300.asteroidlocator.core
 
 
-import com.a9992099300.asteroidlocator.core_api.di.RepositoryProvider
-import com.a9992099300.asteroidlocator.core_api.di.ContextProvider
-import com.a9992099300.asteroidlocator.core_api.di.SharedPreferenceProvider
-import com.a9992099300.asteroidlocator.core_api.di.UIMapperProvider
+import com.a9992099300.asteroidlocator.core_api.di.*
 import com.a9992099300.asteroidlocator.core_impl.di.*
 
 object CoreProviderFactory {
@@ -21,6 +18,11 @@ object CoreProviderFactory {
     fun createRepositoryBuilder(contextProvider: ContextProvider)
     : RepositoryProvider {
         return AsteroidRepositoryComponent.create(contextProvider)
+    }
+
+    fun createNavigation(contextProvider: ContextProvider)
+            : NavigationProvider {
+        return DaggerNavigationComponent.builder().contextProvider(contextProvider).build()
     }
 
 }

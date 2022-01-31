@@ -48,11 +48,14 @@ object Libs {
         private const val appCompatVersion = "1.4.0"
         private const val coreKtxVersion = "1.7.0"
         private const val preferenceKtxVersion = "1.1.1"
+        private const val swipeRefreshLayoutVersion = "1.1.0"
 
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
         const val appCompat = "androidx.appcompat:appcompat:$appCompatVersion"
         const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
         const val preferenceKtx = "androidx.preference:preference-ktx: $preferenceKtxVersion"
+        const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout: $swipeRefreshLayoutVersion"
+
     }
 
     object Jetpack {
@@ -76,8 +79,6 @@ object Libs {
         const val dagger = "com.google.dagger:dagger:$daggerVersion"
         const val daggerKapt = "com.google.dagger:dagger-compiler:$daggerVersion"
     }
-
-
 
     object Network{
         private const val retrofitVersion = "2.9.0"
