@@ -64,6 +64,9 @@ dependencies {
     testImplementation(Libs.test.junit)
     androidTestImplementation(Libs.test.junitExt)
     androidTestImplementation(Libs.test.espresso)
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0'
+    testImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
+    testImplementation 'app.cash.turbine:turbine:0.5.2'
 
     // DI
     implementation(Libs.di.dagger)
