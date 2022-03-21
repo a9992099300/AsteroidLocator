@@ -29,7 +29,7 @@ internal class AsteroidViewHolder(
         binding.setDiameterTextView.text =
             "${asteroid.maximumDiameter} " + context.resources.getString(R.string.meters)
 
-        if (asteroid.isPotentiallyHazardousAsteroid == true) {
+        if (asteroid.isPotentiallyHazardousAsteroid) {
             binding.asteroidDangerousImageView
                 .setImageResource(R.drawable.ic_baseline_nearby_error_orange_24)
             Log.d(TAG, "isPotentiallyHazardous ${asteroid.name}")

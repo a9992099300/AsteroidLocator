@@ -1,6 +1,6 @@
 object Versions {
     const val compileSdkVersion = 31
-    const val targetSdkVersion = 31
+    const val targetSdkVersion = 30
     const val minSdkVersion = 21
     const val buildToolsVersion = "30.0.2"
 
@@ -65,7 +65,7 @@ object Libs {
     }
 
     object Test {
-        private const val junitVersion = "4.13"
+        private const val junitVersion = "4.13.2"
         private const val junitExtVersion = "1.1.3"
         private const val espressoVersion = "3.4.0"
 

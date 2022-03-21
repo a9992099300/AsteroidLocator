@@ -40,11 +40,12 @@ import java.util.*
 import javax.inject.Inject
 
 
-internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidActionListener{
+class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidActionListener{
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: AsteroidListViewModel by viewModels { viewModelFactory }
+  //  private val viewModel: AsteroidListViewModel by viewModels { viewModelFactory }
+     private lateinit var viewModel: AsteroidListViewModel
 
     private lateinit var binding:  FragmentAsteroidListBinding
     private var adapter = AsteroidAdapter (this)
@@ -79,6 +80,10 @@ internal class AsteroidListFragment : Fragment(), AsteroidAdapter.AsteroidAction
         super.onViewCreated(view, savedInstanceState)
 
         val dateArg: AsteroidListFragmentArgs by navArgs()
+
+        viewModel =
+            ViewModelProvider(this, viewModelFactory).get(AsteroidListViewModel::class.java)
+
         animateLine(binding.gradientLine)
         getDate(dateArg)
         setupRecyclerView()

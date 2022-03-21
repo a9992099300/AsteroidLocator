@@ -6,7 +6,7 @@ import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
 // import com.a9992099300.asteroidlocator.core_api.di.ProvidersFacade
 import com.a9992099300.asteroidlocator.di.FacadeComponent
 
-class App : Application(), AppWithFacade {
+open class App : Application(), AppWithFacade {
 
     companion object {
         private var facadeComponent: FacadeComponent? = null

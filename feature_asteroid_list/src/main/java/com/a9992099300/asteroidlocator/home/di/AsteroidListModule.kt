@@ -8,9 +8,21 @@ import com.a9992099300.asteroidlocator.home.asteroidList.usecase.SaveDeleteAster
 import com.a9992099300.asteroidlocator.home.asteroidList.vm.AsteroidListViewModelFactory
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
 @Module
 internal interface AsteroidListModule {
+
+    companion object {
+
+        @Provides
+        fun providesIoDispatcher(): CoroutineDispatcher {
+            return Dispatchers.IO
+        }
+    }
+
     @Binds
     fun bindViewModelFactory(
         viewModelFactory: AsteroidListViewModelFactory
