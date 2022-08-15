@@ -16,7 +16,7 @@ internal class SettingModelFactory
     : ViewModelProvider.Factory{
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SettingViewModel::class.java)) {
             return SettingViewModel(
                 saveAppPreferenceUseCase,

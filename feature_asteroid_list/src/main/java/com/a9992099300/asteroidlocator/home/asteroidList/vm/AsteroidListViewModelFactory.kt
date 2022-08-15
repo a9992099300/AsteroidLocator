@@ -23,11 +23,10 @@ class AsteroidListViewModelFactory
     private val nearEarthObjectMapper: ModelMapper<NearEarthObject, NearEarthObjectUI>,
     private val saveDeleteAsteroidsUseCase: SaveDeleteAsteroidsUseCase,
     private val ioCoroutineDispatcher: CoroutineDispatcher,
-)
-    : ViewModelProvider.Factory{
+): ViewModelProvider.Factory{
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(AsteroidListViewModel::class.java)) {
             return AsteroidListViewModel(//asteroidRepository,
                 UIMapper,

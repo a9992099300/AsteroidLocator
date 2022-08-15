@@ -9,7 +9,7 @@ object Versions {
 
 object GradlePlugins {
     private const val androidBuildToolsVersion = "7.0.3"
-    private const val navigationSafeargsVersion = "2.3.5"
+    private const val navigationSafeargsVersion = "2.5.1"
 
     const val navigationSafeargsPlugins = "androidx.navigation.safeargs"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
@@ -59,7 +59,7 @@ object Libs {
     }
 
     object Jetpack {
-        const val navigationComponentVersion = "2.3.5"
+        const val navigationComponentVersion = "2.5.1"
         const val navigationComponentFragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigationComponentVersion"
         const val navigationComponentUiKtx = "androidx.navigation:navigation-ui-ktx:$navigationComponentVersion"
     }

@@ -25,7 +25,6 @@
             <option value="$PROJECT_DIR$/ui_core" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

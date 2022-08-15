@@ -19,7 +19,7 @@ fun NavController.deepLinkNavigateTo(
     val builder = NavOptions.Builder()
 
     if (popUpTo) {
-        builder.setPopUpTo(graph.startDestination, true)
+        builder.setPopUpTo(graph.startDestinationId, true)
     }
 
     navigate(
